@@ -1,4 +1,3 @@
-```markdown
 # Repository Contribution Guide
 
 Follow the steps below to clone the repository, create your branch, make changes, and push your updates to the remote repository.
