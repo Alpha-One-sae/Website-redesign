@@ -20,7 +20,12 @@
     color: #7399b4;
     margin-left: 10px;
     text-align: center;
-
+    text-shadow: 
+      0 0 5px #00f,   
+      /* 0 0 10px #00f,   */
+      /* 0 0 20px #00f,    */
+      /* 0 0 40px #00f,    */
+      0 0 80px #00f;   
 } 
 
 .slink{
@@ -62,7 +67,7 @@ button{
     transition: background-color 0.3s ease;
 }
 button:hover{
-    background-color: rgb(164, 221, 67);
+    background-color: rgb(109, 159, 22);
 }
 button:active{
     background-color: rgb(164, 221, 67);
