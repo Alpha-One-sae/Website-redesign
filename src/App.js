@@ -1,12 +1,14 @@
 import './App.css';
 import Navbar from './pages/Navbar';
+import { Toaster } from 'react-hot-toast';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Home from './pages/Home';
 import Gallery from './pages/Gallery';
 import Sponsor from './pages/Sponsor';
 import Events from './pages/Events';
-import About from './pages/About';
+import About from './pages/Team';
 import NotFound from './pages/NotFound';
+import Team from './pages/Team'
 
 const router = createBrowserRouter(
   [
@@ -42,10 +44,10 @@ const router = createBrowserRouter(
     },
 
     {
-      path: '/about',
+      path: '/team',
       element: <div>
         <Navbar />
-        <About />
+        <Team />
       </div>
     },
 
@@ -63,6 +65,7 @@ function App() {
   return (
     <div>
       <RouterProvider router={router} />
+      <Toaster />
     </div>
   );
 }

@@ -13,7 +13,7 @@ export default function Navbar() {
   const navigate = useNavigate() ;
 
   const learn = () => {
-    navigate('/about') ;
+    navigate('/team') ;
   }
 
   return (
@@ -50,7 +50,7 @@ export default function Navbar() {
         </NavLink>
       </div>
       <div>
-        <button onClick={learn}>Learn More</button>
+        <button onClick={learn}>Meet the Team</button>
       </div>
     </div>
   )
