@@ -3,40 +3,55 @@ import { FaReact } from "react-icons/fa";
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
 import { Aperture, Atom, Box, Chrome, LaptopMinimalCheck, RadioTower, Rss, Cpu, Share2, ChevronRight } from 'lucide-react'
 import { Globe, Radical, MessageCircleReply, CalendarDays } from 'lucide-react'
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, ArrowDown } from 'lucide-react';
 import './Home.css'
 import { Link } from 'react-router-dom';
 import Pencil from './pencil.png'
 import Loc from './loc.png'
 import toast from 'react-hot-toast';
 import Foimg from './formsub1.png';
+import SAE from './wlogo.png';
 
 
 const Home = () => {
 
-  const [visible, setVisible] = useState(false) ;
+  const [scrollToTop, setScrollToTop] = useState(false) ;
   const [formVis, setFormVis] = useState(false) ;
 
   useEffect(() => {
-    const handleScroll = () => {   
-        if (window.scrollY > 300) {
-          setVisible(false);
-        } else {
-          setVisible(true);
-        }
+    const scrollBehave = () => {
+      const scrollY = window.scrollY ;  // Maximum scrollable height
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight ;  // Maximum scrollable height
+
+      setScrollToTop(scrollY > maxScroll / 2) ;
     }
-    window.addEventListener('scroll', handleScroll);
+
+    window.addEventListener('scroll', scrollBehave) ;
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+      // Cleanup function
+      window.removeEventListener('scroll', scrollBehave) ;
+    }
+  }, [])
+  
   
 
-  const scrollUp = () =>{
-    window.scrollTo(
-      { top: 0, 
-        behavior: "smooth" }
-    );
+  const handleScroll = () => {
+    if(scrollToTop)
+      {
+        // Scroll to top
+        window.scrollTo(
+          { top: 0, 
+            behavior: "smooth" }
+        );
+      }
+      else{
+        // Scroll to bottom
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+        window.scrollTo (
+          { top: maxScroll, 
+            behavior: 'smooth' }
+        );
+      } 
   };
   
 
@@ -49,6 +64,24 @@ const Home = () => {
     event.preventDefault(); // Prevent default anchor behavior
     setFormVis(true); // Show the form
   }
+
+  const closeform = () => {
+    setFormVis(false); // close the form when clicked
+  }
+
+  useEffect(() => {
+    if(formVis)
+      {
+        document.body.style.overflow = 'hidden';
+      }
+      else{
+        document.body.style.overflow = 'auto';
+      }
+    return () => {
+      document.body.style.overflow = 'auto';
+    }
+  }, [formVis])
+  
 
   function formcheck(event)
   {
@@ -85,11 +118,14 @@ const Home = () => {
 
     <div className="mainc">
 
-      <button className="scrollbtn" onClick={scrollUp} aria-label='Scroll to Top'>
-        <ArrowUp size={24} />
+      <button className="scrollbtn" onClick={handleScroll} aria-label='Scroll to Top/Down'>
+        {scrollToTop ? <ArrowUp size={24} /> : <ArrowDown size={24} />}
       </button>
 
       {formVis && (
+         <>
+          <div className="backdrop"></div>
+
           <div className="gform">
             <div className='formimg'>
               <img id="foimg" src={Foimg} alt="Form Image"></img>
@@ -104,9 +140,13 @@ const Home = () => {
               <label htmlFor="msg"></label>
               <textarea type="text" id='msg' rows="6" cols="50" placeholder="Your Message"></textarea>
 
+              <div className='fbtn'>
               <button type="submit" className='subbtn'>Submit</button>
+              <button className='closef' onClick={closeform}>Close</button>
+              </div>
             </form>
           </div>
+          </>
         )}
 
       <div className="icons">
@@ -181,13 +221,43 @@ const Home = () => {
         </div><hr/>
 
         <div className='footer'>
+
+          <div className='foot1'>
+          <div className='footdesc'>
+            <img src={SAE} alt="sae_img" id="simg"></img>
+            <h2 id="sname">SAE UIET PU</h2>
+          </div>
           <div className='social'>
             <a href="#"><FaFacebook size={30} /></a>
             <a href="#"><FaTwitter size={30} /></a>
             <a href="#"><FaInstagram size={30} /></a>
             <a href="#"><FaLinkedin size={30} /></a>
           </div>
-          <p id="footerp">&copy; 2022 SAE UIET PU. All rights reserved.</p>
+          </div>
+
+          <div className='foot2'>
+            <div className='steams'>
+              <h4 id='teamh'>SAE Teams</h4>
+              <p id='alpha'>Alpha One</p>
+              <p id='garuda'>Garuda Motorsports</p>
+              <p id='vayu'>Team Vayuveer</p>
+              <p id='robo'>Robotics Team</p>
+              <Link to='/team' id='mteam'>Meet the Team</Link>
+            </div>
+            <div className='quicklinks'>
+              <h4 id='quickh'>Quick Links</h4>
+              <Link to='/' id='home'>Home</Link>
+              <Link to='/gallery' id='gallery'>Gallery</Link>
+              <Link to='/events' id='events'>Events</Link>
+              <Link to='/sponsor' id='sponsor'>Sponsor</Link>
+              <Link to='#' id='projects' target=''>Projects</Link>
+              <Link to='#' id='cont' onClick={openForm}>Contact</Link>
+            </div>
+          </div>
+        </div>
+
+        <div className='copyright'>
+          <p id="footerp">&copy; 2025 SAE UIET PU. All rights reserved.</p>
           <div className='lastf'>
             Learn Code Collaborate
           </div>

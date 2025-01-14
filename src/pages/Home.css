@@ -270,14 +270,17 @@
 
 
 #footerp{
-  color: #FFFFFF;
-  margin-bottom: 30px;
+  color: #D3D3D3;
+  margin-bottom: 10px;
+  text-align: center;
+  opacity: 0.8;
 }
 
 .social{
   display: flex;
   gap:10px;
   margin-bottom: 10px;
+  margin-left: 20px;
 }
 
 .social > a{
@@ -293,23 +296,69 @@
 
 .footer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
   position: relative;
   padding: 20px;
+  width: 100% ;
+  height: 200px;
   /* background-color: #312D2A; */
   /* background-color: #2C2926; */
   background-color: #100F0E;
+  margin-bottom: 20px;
 }
+.foot1{
+  display: flex;
+  flex-direction: column;
+  margin-left: 300px;
+  margin-right: 200px;
+}
+#simg{
+  height: 100px;
+  width: 100px;
+  margin-right: 20px;
+}
+#sname{
+  color: #FFFFFF ;
+}
+.footdesc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.foot2{
+  display:flex;
+}
+.steams{
+  display: flex;
+  flex-direction: column;
+  margin-right: 200px;
+}
+.quicklinks{
+  display: flex;
+  flex-direction: column;
+}
+.steams > p{
+  color: #d3d3d3c3;
+  margin-bottom: 2px;
+}
+#mteam, #home, #gallery, #events, #sponsor, #projects, #cont{
+  text-decoration: none;
+  color: #d3d3d3c3;
+  margin-bottom: 2px;
+}
+#teamh, #quickh{
+  color: #FFFFFF;
+  margin-bottom: 8px;
+}
+
 
 hr{
   width: 80%;
   margin: 10px auto;
   color: #bdbdbd7e;
   box-shadow: 0 0 10px rgba(70, 172, 231, 0.5);
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .lastf{
@@ -327,7 +376,7 @@ hr{
 
 .gform{
   top: 1% ;
-  right: 7% ;
+  right: 35% ;
   position: fixed;
   z-index: 100;
   /* background-color: #B0DFFB; */
@@ -340,6 +389,17 @@ hr{
   padding: 30px;
   display: flex;
   flex-direction: row;
+  z-index: 1000;
+}
+
+/* Backdrop style for inactive background */
+.backdrop {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); 
+  z-index: 999; /* Place above all other content */
+  backdrop-filter: blur(3px); /* Light blur effect */
 }
 
 .formimg{
@@ -382,7 +442,14 @@ hr{
   border-radius: 5px;
 }
 
-.formsae > button{
+.fbtn{
+  display: flex ;
+}
+.subbtn{
+  margin-left:15px;
+}
+
+.fbtn > button{
   /* background-color: #001d56d7; */
   background-color: #736EFE;
   color: white;
@@ -396,7 +463,7 @@ hr{
   font-weight: 540;
 }
 
-.formsae > button:hover{
+.fbtn > button:hover{
   background-color: #6856f1;
 }
 
