@@ -1,0 +1,278 @@
+.mtcontainer{
+    width: 100vw ;
+    height: auto ;
+}
+body, html {
+    overflow-x: hidden;
+  }
+
+
+.htmec{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width:100% ;
+  height: 85px ;
+  align-items: center;
+  background-color: rgba(240, 248, 255, 0.842);
+  margin-bottom: 30px;
+}
+#eb, #cm{
+    text-decoration: none;
+    color: #FF497C ;
+    font-weight: 530;
+    transition: transform 0.2s ease-out, color 0.2s ease-out;
+    cursor: pointer ;
+}
+#our{
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-size: xx-large;
+}
+#eb:hover, #cm:hover {
+    color: #1F2732;
+    transform: scale(1.1) ;
+}
+#eb{
+    margin-right: 30px ;
+}
+
+.ebcmcontainer{
+    width: 100vw ;
+    height: max-content ;
+    background: #000a1e; 
+    position: relative;
+    overflow: hidden;
+}
+.lucicon{
+    z-index: 10;
+}
+
+.shape {
+    position: absolute;
+    font-size: 30px;
+    opacity: 0.8;
+    animation: rotation 5s infinite ease-in-out;
+    color: rgba(104, 172, 239, 0.5); 
+    transition: color 0.2s ease;
+  }
+  
+.shape:hover {
+    color: #007bff; 
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+}
+
+.exboard{
+    z-index: 100;
+}
+
+.pent{
+    top: 10% ;
+    left: 10% ;
+}
+.tri{
+    top: 95% ;
+    left: 5% ;
+}
+.sq{
+    top: 56% ;
+    left: 73% ;
+}
+.hex{
+    top: 91% ;
+    left: 61% ;
+}
+.latom{
+    top: 50% ;
+    left: 50% ;
+}
+.lbox{
+    top: 37% ;
+    left: 31% ;
+}
+.lrss{
+    top: 70% ;
+    left: 20% ;
+}
+.lcpu{
+    top: 90% ;
+    left: 90% ;
+}
+.lchrome{
+    top: 18% ;
+    right: 18% ;
+}
+.lradio{
+    top : 6% ;
+    left: 50% ;
+}
+
+
+#ebh{
+    color: #FFFFFF ;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.exboard{
+    display: flex ;
+    flex-direction: column;
+}
+.exd1{
+    display:flex;
+    justify-content: space-evenly;
+    gap: 40px ;
+    margin-bottom: 40px;
+}
+.exd2{
+    display:flex;
+    justify-content: space-evenly;
+    gap: 40px ;
+    margin-bottom: 40px;
+}
+.exd3{
+    display:flex;
+    justify-content: space-evenly;
+    gap: 40px ;
+    margin-bottom: 80px;
+}
+
+.img1, .img2, .img3, .img4, .img5, .img6, .img7, .img8, .img9{
+    width: 240px ;
+    height: 300px ;
+    border: 2px solid white;
+    background-color: #EAEAEA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#chair, #vchair, #coord, #sec, #tre, #soft, #prog, #tech, #fin{
+    width: 240px ;
+    height: 240px;
+}
+
+#pchair, #pvchair, #pcoord, #psec, #ptre, #psoft, #pprog, #ptech, #pfin{
+    color: #FF497C ;
+    margin-bottom: 10px;
+    font-size: 1.02rem;
+}
+#hchair, #hvchair, #hcoord, #hsec, #htre, #hsoft, #hprog, #htech, #hfin{
+    color: rgb(0, 0, 91) ;
+    margin-bottom: 5px;
+    font-size: larger;
+}
+.imgicon > a{
+    margin-right: 15px;
+}
+
+
+
+#ch{
+    color: #FFFFFF ;
+    margin-bottom: 50px;
+    margin-left: 50px;
+}
+
+.cboard{
+    display: flex ;
+    flex-direction: column;
+}
+.exd4{
+    display:flex;
+    justify-content: space-evenly;
+    gap: 40px ;
+    margin-bottom: 40px;
+}
+.exd5{
+    display:flex;
+    justify-content: space-evenly;
+    gap: 40px ;
+    margin-bottom: 40px;
+}
+.exd6{
+    display:flex;
+    justify-content: space-evenly;
+    gap: 40px ;
+    margin-bottom: 60px;
+}
+.img10, .img11, .img12, .img13, .img14, .img15, .img16, .img17, .img18, .img19, .img20, .img21{
+    width: 240px ;
+    height: 300px ;
+    border: 2px solid white;
+    background-color: #EAEAEA;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#mem{
+    width: 240px ;
+    height: 240px;
+}
+#pmem{
+    color: #FF497C ;
+    margin-bottom: 10px;
+    font-size: 1.02rem;
+}
+#hmem{
+    color: rgb(0, 0, 91) ;
+    margin-bottom: 5px;
+    font-size: larger;
+}
+
+.footer1{
+    width: 100% ;
+    background-color: #232323;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    height: auto;
+}
+.soicon{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+    color: rgba(174, 172, 172, 0.815) ;
+    gap: 10px;
+    margin-top: 20px;
+}
+.s-icon:hover{
+  color: #FFFFFF ;
+}
+.foothd{
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+.lcc{
+    background-color: #FF497C;
+    width: 100vw;
+    height: 50px;
+    text-align: center;
+    padding: 10px;
+    color: #FFFFFF;
+    font-weight: 550;
+    z-index: 100;
+}
+
+
+
+
+
+
+
+
+
+
+
+
