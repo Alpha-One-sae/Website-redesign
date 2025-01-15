@@ -405,7 +405,7 @@ const Team = () => {
 
       </div>
 
-      <div className="footer">
+      <div className="footer1">
         <div className="soicon">
           <FaInstagram size={30} className="s-icon" />
           <FaLinkedin size={30} className="s-icon" />
