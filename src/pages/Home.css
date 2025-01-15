@@ -358,7 +358,7 @@ hr{
   margin: 10px auto;
   color: #bdbdbd7e;
   box-shadow: 0 0 10px rgba(70, 172, 231, 0.5);
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 .lastf{
@@ -378,7 +378,6 @@ hr{
   top: 1% ;
   right: 35% ;
   position: fixed;
-  z-index: 100;
   /* background-color: #B0DFFB; */
   /* background-color: #7399b4; */
   background-image: linear-gradient(to top, #a3bded 0%, #6991c7 100%);
