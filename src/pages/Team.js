@@ -147,6 +147,7 @@ const Team = () => {
               </div>
             </div>
           </div>
+          {/* mycode */}
 
           <div className="exd3">
             <div className="img7">
