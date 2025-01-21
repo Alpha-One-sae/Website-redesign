@@ -16,6 +16,15 @@ import {
   ChevronRight,
   Image,
 } from "lucide-react";
+import img1 from '../assets/img1.png';
+import img2 from '../assets/img2.png';
+import img3 from '../assets/img3.png';
+import img4 from '../assets/img4.png';
+import img6 from '../assets/img6.png';
+import img7 from '../assets/img7.jpeg';
+import img8 from '../assets/img8.jpg';
+import img9 from '../assets/img9.jpg';
+
 
 const Team = () => {
   return (
@@ -50,7 +59,7 @@ const Team = () => {
         <div className="exboard" id="exboard">
           <div className="exd1">
             <div className="img1">
-              <img src={Image} alt="chairperson" id="chair"></img>
+              <img src={img1} alt="chairperson" id="chair" className="team-image"></img>
               <h3 id="hchair">Akshit Kain</h3>
               <p id="pchair">Chairperson</p>
               <div className="imgicon">
@@ -66,7 +75,7 @@ const Team = () => {
             </div>
 
             <div className="img2">
-              <img src={Image} alt="vice-chairperson" id="vchair"></img>
+              <img src={img2} alt="vice-chairperson" id="vchair"></img>
               <h3 id="hvchair">Parth Bansal</h3>
               <p id="pvchair">Vice Chairperson</p>
               <div className="imgicon">
@@ -82,7 +91,7 @@ const Team = () => {
             </div>
 
             <div className="img3">
-              <img src={Image} alt="coordinator" id="coord"></img>
+              <img src={img3} alt="coordinator" id="coord"></img>
               <h3 id="hcoord">Vinayak Sharma</h3>
               <p id="pcoord">Club Co-ordinator</p>
               <div className="imgicon">
@@ -100,7 +109,7 @@ const Team = () => {
 
           <div className="exd2">
             <div className="img4">
-              <img src={Image} alt="secretary" id="sec"></img>
+              <img src={img4} alt="secretary" id="sec"></img>
               <h3 id="hsec">Prashant Singh</h3>
               <p id="psec">Secretary</p>
               <div className="imgicon">
@@ -132,7 +141,7 @@ const Team = () => {
             </div>
 
             <div className="img6">
-              <img src={Image} alt="software" id="soft"></img>
+              <img src={img6} alt="software" id="soft"></img>
               <h3 id="hsoft">Gaurav Patel</h3>
               <p id="psoft">Software & IT Chair</p>
               <div className="imgicon">
@@ -147,10 +156,11 @@ const Team = () => {
               </div>
             </div>
           </div>
+          {/* mycode */}
 
           <div className="exd3">
             <div className="img7">
-              <img src={Image} alt="technical" id="tech"></img>
+              <img src={img7} alt="technical" id="tech"></img>
               <h3 id="htech">Harsh Bassal</h3>
               <p id="ptech">Technical Chair</p>
               <div className="imgicon">
@@ -166,7 +176,7 @@ const Team = () => {
             </div>
 
             <div className="img8">
-              <img src={Image} alt="program" id="prog"></img>
+              <img src={img8} alt="program" id="prog"></img>
               <h3 id="hprog">Shubham Kumar</h3>
               <p id="pprog">Program Chair</p>
               <div className="imgicon">

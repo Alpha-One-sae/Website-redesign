@@ -147,7 +147,7 @@ body, html {
 
 .img1, .img2, .img3, .img4, .img5, .img6, .img7, .img8, .img9{
     width: 240px ;
-    height: 300px ;
+    height: 330px ;
     border: 2px solid white;
     background-color: #EAEAEA;
     display: flex;
@@ -264,6 +264,11 @@ body, html {
     font-weight: 550;
     z-index: 100;
 }
+.team-image {
+    width: 240px;
+    height: 240px;
+    object-fit: cover; 
+  }
 
 
 
