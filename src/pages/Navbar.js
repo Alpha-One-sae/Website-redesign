@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Home, Image, Calendar, Menu } from 'lucide-react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import logo from "../Asset/wlogo.png";
@@ -6,6 +6,11 @@ import logo from "../Asset/wlogo.png";
 export default function CyberpunkNavbar() {
   const nav = useNavigate();
   const location = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State to manage mobile menu visibility
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(prevState => !prevState); // Toggle the mobile menu state
+  };
 
   return (
     <nav className="relative bg-black border-b border-blue-500/20 z-10">
@@ -61,14 +66,31 @@ export default function CyberpunkNavbar() {
         </div>
 
         {/* Mobile Menu Icon */}
-        <button className="md:hidden">
-          <Menu size={28} className="text-blue-300" />
-        </button>
+        <div className="md:hidden flex items-center">
+          {/* Meet the Team Button in Mobile View */}
+          <button
+            className={`px-4 py-2 rounded-lg transition ${
+              location.pathname === '/Meet-team'
+                ? 'bg-gray-400 text-black' // Highlighted style for active page
+                : 'bg-green-500 text-black hover:bg-green-600' // Default style
+            }`}
+            onClick={() => {
+              nav("/Meet-team");
+            }}
+          >
+            Meet the Team
+          </button>
+          <button className="ml-2" onClick={toggleMobileMenu}>
+            <Menu size={28} className="text-blue-300" />
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
-      <div className="md:hidden bg-black border-t border-blue-500/10 p-4">
-        <ul className="space-y-4 text-blue-300">
+      <div
+        className={`md:hidden bg-black border-t border-blue-500/10 transition-all duration-300 ease-in-out overflow-hidden absolute left-0 right-0 ${isMobileMenuOpen ? 'max-h-40' : 'max-h-0'}`} // Use absolute positioning
+      >
+        <ul className={`space-y-4 text-blue-300 pb-3.5 pl-14 pt-1.5 ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
           <li>
             <Link to="/" className="flex items-center gap-2">
               <Home size={20} /> Home
