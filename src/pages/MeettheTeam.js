@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CyberpunkNavbar from "./Navbar";
-import { Cpu, Zap, Box, Share2, ChevronRight, Clock, Activity, Hexagon } from 'lucide-react';
+import { Cpu, Zap, Box } from 'lucide-react';
+
 const teamMembers = [
   { category: "Executive Board", name: "Akshit Kain", title: "Chairperson", image: "path/to/image1.jpg", linkedin: "#", instagram: "#" },
   { category: "Executive Board", name: "Parth Bansal", title: "Vice Chairperson", image: "path/to/image2.jpg", linkedin: "#", instagram: "#" },
@@ -34,7 +35,7 @@ const MeetTheTeam = () => {
       rows.push(remainingMembers.slice(0, countInRow));
       remainingMembers = remainingMembers.slice(countInRow);
       countInRow++;
-    }
+    } 
 
     return rows;
   };
@@ -84,13 +85,14 @@ const MeetTheTeam = () => {
               {rows.map((row, rowIndex) => (
                 <div
                   key={rowIndex}
-                  className={`flex justify-center space-x-4 flex-wrap ${rowIndex > 0 ? `mt-[${rowIndex * 10}px]` : ""
+                  className={`flex justify-center 
+                    cursor-pointer space-x-4 flex-wrap ${rowIndex > 0 ? `mt-[${rowIndex * 10}px]` : ""
                     }`}
                 >
                   {row.map((member, index) => (
                     <div
                       key={index}
-                      className="relative group w-[90%] sm:w-60 lg:w-80 h-auto bg-gray-800 rounded-lg shadow-lg hover:shadow-cyan-500/50 transform transition duration-500 overflow-hidden"
+                      className="relative group w-full sm:w-60 lg:w-80 h-auto bg-gray-800 rounded-lg shadow-lg hover:shadow-cyan-500/50 transform transition duration-500 overflow-hidden"
                     >
                       {/* Member Image */}
                       <img
