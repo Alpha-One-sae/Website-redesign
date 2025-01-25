@@ -4,7 +4,7 @@ import logo from "../Asset/wlogo.png";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-8 px-6 m-[-23px] mt-0 relative border-t border-blue-500/30">
+    <footer className="bg-black  text-white py-8 px-6 m-[-23px] mt-0 relative border-t border-blue-500/30">
       <div className="container mx-auto flex flex-wrap justify-between items-center gap-8">
         {/* Logo and Description */}
         <div className="w-full flex items-center justify-center gap-5 md:w-1/3 space-y-4">

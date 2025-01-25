@@ -1,16 +1,34 @@
 import React, { useState } from 'react';
 import { Box, Zap, Hexagon, Share2, X } from 'lucide-react';
 import Footer from './Footer';
+import imgANSys from "../Gallery/ANSys.png";
+import imgDic from "../Gallery/dic.jpg";
+import imgEmm from "../Gallery/emm.png";
+import imgInfileague from "../Gallery/infileague.jpg";
+import imgMec from "../Gallery/mec.jpg";
+import imgMsmeBhopal from "../Gallery/msmeBhopal.jpg";
+import imgSim from "../Gallery/sim.png";
+import imgSimscale from "../Gallery/simscale.png";
+import imgSolid from "../Gallery/SOLID.png";
+import imgSolidworks from "../Gallery/solidworks.png";
+import imgTruba from "../Gallery/truba.jpg";
+import imgUiet from "../Gallery/Uiet.jpeg";
+import imgUx from "../Gallery/ux.jpg";
 
 const sponsors = [
-    { id: 1, name: 'Sponsor 1', logo: 'path/to/logo1.png' },
-    { id: 2, name: 'Sponsor 2', logo: 'path/to/logo2.png' },
-    { id: 3, name: 'Sponsor 3', logo: 'path/to/logo3.png' },
-    { id: 4, name: 'Sponsor 4', logo: 'path/to/logo4.png' },
-    { id: 5, name: 'Sponsor 5', logo: 'path/to/logo5.png' },
-    { id: 6, name: 'Sponsor 6', logo: 'path/to/logo6.png' },
-    { id: 7, name: 'Sponsor 7', logo: 'path/to/logo7.png' },
-    { id: 8, name: 'Sponsor 8', logo: 'path/to/logo8.png' },
+    { id: 1, name: 'ANSys Solutions', logo: imgANSys },
+    { id: 2, name: 'DIC Innovations', logo: imgDic },
+    { id: 3, name: 'EMM Technologies', logo: imgEmm },
+    { id: 4, name: 'Infileague Systems', logo: imgInfileague },
+    { id: 5, name: 'MEC Enterprises', logo: imgMec },
+    { id: 6, name: 'MSME Bhopal', logo: imgMsmeBhopal },
+    { id: 7, name: 'Sim Solutions', logo: imgSim },
+    { id: 8, name: 'Simscale Inc.', logo: imgSimscale },
+    { id: 9, name: 'SOLID Frameworks', logo: imgSolid },
+    { id: 10, name: 'SolidWorks Corp.', logo: imgSolidworks },
+    { id: 11, name: 'Truba College', logo: imgTruba },
+    { id: 12, name: 'UIET Chandigarh', logo: imgUiet },
+    { id: 13, name: 'UX Creators', logo: imgUx },
 ];
 const GlowingText = ({ children }) => (
     <span className="relative">
@@ -31,14 +49,14 @@ export default function Sponsors() {
     };
 
     return (
-        <div className="min-h-screen bg-black text-white overflow-hidden relative z-0">
+        <div className="min-h-screen flex flex-col items-center bg-black text-white overflow-hidden relative z-0">
             {/* Animated Background Grid */}
             <div className="fixed inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none z-[-1]">
                 <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-black"></div>
             </div>
 
             {/* Why Sponsor Us Section */}
-            <div className="relative min-h-[60vh] flex items-center justify-center text-center px-6">
+            <div className="relative min-h-[60vh] flex items-center m-10 justify-center text-center px-6">
                 <div className="absolute inset-0 overflow-hidden">
                     <Hexagon className="absolute w-48 h-48 text-blue-500/10 animate-spin-slow top-1/4 left-1/3" />
                     <Hexagon className="absolute w-64 h-64 text-blue-700/10 animate-spin-slow bottom-1/4 right-1/3" />
@@ -160,34 +178,33 @@ export default function Sponsors() {
                         <span className="relative text-blue-500">Our Sponsors</span>
                     </span>
                 </h2>
-
-                {/* Sponsor Cards */}
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
                     {sponsors.map((sponsor) => (
                         <div
                             key={sponsor.id}
-                            className="group relative p-6 border border-blue-500/30 rounded-xl bg-black/50 backdrop-blur-sm hover:border-blue-500 transition-all duration-300 cursor-pointer"
+                            className="group flex flex-col items-center"
                         >
-                            <div className="absolute inset-0 bg-blue-500/10 blur-xl group-hover:bg-blue-500/20 transition-all duration-300"></div>
-
-                            <div className="relative text-center">
-                                {/* Logo */}
-                                <img
-                                    src={sponsor.logo}
-                                    alt={sponsor.name}
-                                    className="mx-auto w-16 h-16 object-contain transition-transform duration-300 group-hover:blur-sm"
-                                />
-
-                                {/* Company Name (Hidden initially, fades in on hover) */}
-                                <h3 className="text-xl font-bold mb-1 text-white opacity-0 group-hover:opacity-100 group-hover:translate-y-1 transition-all duration-300">
-                                    {sponsor.name}
-                                </h3>
+                            <div
+                                className="relative w-20 h-20 mx-auto flex items-center justify-center rounded-full bg-black/50 backdrop-blur-sm border border-blue-500/30 hover:border-blue-500 transition-all duration-300 cursor-pointer"
+                            >
+                                <div className="absolute inset-0 bg-blue-500/10 blur-xl rounded-full group-hover:bg-blue-500/20 transition-all duration-300"></div>
+                                <div className="relative text-center">
+                                    <img
+                                        src={sponsor.logo}
+                                        alt={sponsor.name}
+                                        className="w-16 h-16 object-contain rounded-full transition-transform duration-300 group-hover:scale-105"
+                                    />
+                                </div>
                             </div>
-
-                            <div className="absolute -bottom-1 left-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent transform -translate-x-1/2 animate-pulse"></div>
+                            <h3
+                                className="mt-2 text-white font-medium text-center transition-all duration-300 group-hover:text-blue-500 group-hover:scale-110"
+                            >
+                                {sponsor.name}
+                            </h3>
                         </div>
                     ))}
                 </div>
+
                 <div id="footer-section" className="mt-10">
                     <Footer />
                 </div>
