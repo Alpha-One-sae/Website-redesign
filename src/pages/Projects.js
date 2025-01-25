@@ -38,7 +38,7 @@ const GlowingText = ({ children }) => (
 
 export default function Projects() {
   const handleProjectClick = (project) => {
-    window.location.href = `/projects`; // Navigate to project description page
+    window.location.href = `/sae-project-blog`; 
   };
 
   return (
@@ -58,7 +58,7 @@ export default function Projects() {
                 <div
                   key={project.id}
                   className="group relative p-6 border border-blue-500/30 rounded-xl bg-black/50 backdrop-blur-sm hover:border-blue-500 transition-all duration-300 cursor-pointer z-[50]"
-                  // onClick={() => handleProjectClick(project)}
+                  onClick={() => handleProjectClick(project)}
                 >
                   <div className="absolute inset-0 bg-blue-500/10 blur-xl group-hover:bg-blue-500/20 transition-all duration-300"></div>
                   <div className="relative">

@@ -2,24 +2,23 @@ import React from "react";
 import { Cpu, Zap, Box, ChevronRight } from "lucide-react";
 
 const EventPage = () => {
-  // Events data (empty for now)
-  const events = []; // Replace with an array of events when available
+  
+  const events = []; 
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden relative z-0">
-      {/* Animated Background Grid */}
+    
       <div className="fixed inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none z-[-1]">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-black"></div>
       </div>
 
-      {/* Decorative Lines */}
+      
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-full h-1 bg-blue-500/20 animate-pulse top-1/4 -skew-y-12"></div>
         <div className="absolute w-1 h-full bg-blue-500/20 animate-pulse left-1/4 -skew-x-12"></div>
         <div className="absolute w-full h-1 bg-blue-500/20 animate-pulse bottom-1/3 -skew-y-12"></div>
       </div>
 
-      {/* Event Page Content */}
       <div className="relative container mx-auto px-6 pt-32">
         <div className="flex flex-col items-center text-center space-y-8">
           <h1 className="text-5xl font-bold">
@@ -34,8 +33,6 @@ const EventPage = () => {
             Join us in shaping the future through innovative and exciting events.
           </p>
         </div>
-
-        {/* Conditional Rendering for Events */}
         {events.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
             {events.map((event, index) => (
@@ -64,8 +61,6 @@ const EventPage = () => {
           </div>
         )}
       </div>
-
-      {/* Decorative Icons */}
       <div className="absolute top-1/4 right-1/4">
         <Box className="w-8 h-8 text-blue-500 animate-pulse" />
       </div>
