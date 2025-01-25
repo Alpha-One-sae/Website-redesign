@@ -36,7 +36,7 @@ const GlowingText = ({ children }) => (
   </span>
 );
 
-export default function CyberpunkProjects() {
+export default function Projects() {
   const handleProjectClick = (project) => {
     window.location.href = `/projects`; // Navigate to project description page
   };
@@ -72,7 +72,7 @@ export default function CyberpunkProjects() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> 
         ))}
         <div className="absolute top-1/4 right-1/4">
           <Box className="w-8 h-8 text-blue-500 animate-pulse" />
