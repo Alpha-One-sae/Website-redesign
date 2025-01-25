@@ -36,7 +36,7 @@ const GlowingText = ({ children }) => (
   </span>
 );
 
-export default function CyberpunkProjects() {
+export default function Projects() {
   const handleProjectClick = (project) => {
     window.location.href = `/projects`; // Navigate to project description page
   };
@@ -58,7 +58,7 @@ export default function CyberpunkProjects() {
                 <div
                   key={project.id}
                   className="group relative p-6 border border-blue-500/30 rounded-xl bg-black/50 backdrop-blur-sm hover:border-blue-500 transition-all duration-300 cursor-pointer z-[50]"
-                  onClick={() => handleProjectClick(project)}
+                  // onClick={() => handleProjectClick(project)}
                 >
                   <div className="absolute inset-0 bg-blue-500/10 blur-xl group-hover:bg-blue-500/20 transition-all duration-300"></div>
                   <div className="relative">
@@ -72,7 +72,7 @@ export default function CyberpunkProjects() {
                 </div>
               ))}
             </div>
-          </div>
+          </div> 
         ))}
         <div className="absolute top-1/4 right-1/4">
           <Box className="w-8 h-8 text-blue-500 animate-pulse" />
