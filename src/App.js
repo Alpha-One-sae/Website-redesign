@@ -23,6 +23,8 @@ function App() {
         <Route path="/Meet-team" element={<MeetTheTeam/>} />
         <Route path="/sponsor" element={<Sponosor/>}/>
         <Route path = "/events" element={<Event/>}/>
+        <Route path = "/sae-project-blog" element={<SAEblogs/>}/>
+        
       </Routes>
       {/* <Footer/> */}
     </BrowserRouter>
