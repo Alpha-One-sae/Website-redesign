@@ -32,7 +32,7 @@ export default function SAEHomepage() {
       projectsSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
+ 
   return (
     <>
       <div className="min-h-screen bg-black text-white overflow-hidden relative z-0">
