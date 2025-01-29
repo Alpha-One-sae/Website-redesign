@@ -17,14 +17,17 @@ const projectCategories = [
   {
     wing: "Garuda Motorsports",
     projects: [
-      { id: 1, title: "H-BAJA", description: "Off-road vehicle project done by Garuda Motorsports" },
+      { id: 1, title: "hBAJA", description: "Hydrogen-CNG ATV designed to balance efficiency and off road performance" },
+      { id: 2, title: "IC Go-Kart", description: "High performance kart with 125 cc engine designed to prioritise stability and handling." },
     ],
   },
   {
     wing: "Vayuveer Aerospace",
     projects: [
-      { id: 8, title: "RC Craft", description: "Remote-controlled aircraft designed for aerospace experiments" },
-      { id: 9, title: "Drone Rescue", description: "Drone capable of executing rescue missions" },
+      { id: 1, title: "Fixed Wing Aircraft", description: "Remote-controlled aircraft designed for aerospace experiments" },
+      { id: 2, title: "Drone", description: "Drone capable of executing rescue missions" },
+      { id: 3, title: "Water Rocket", description: "Drone capable of executing rescue missions" },
+      { id: 4, title: "Solid Rocket Propellant", description: "Drone capable of executing rescue missions" },
     ],
   },
 ];

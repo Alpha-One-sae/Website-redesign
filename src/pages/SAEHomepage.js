@@ -55,7 +55,7 @@ export default function SAEHomepage() {
                 <Hexagon className="w-24 h-24 text-blue-400 animate-spin-slow absolute -top-12 -left-12 opacity-50" />
                 <h1 className="text-5xl font-bold">
                   <GlowingText>
-                    SAE <br />
+                    SAE UIET PU<br />
                     Society of Automobile Engineers
                   </GlowingText>
                 </h1>
@@ -83,10 +83,10 @@ export default function SAEHomepage() {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24">
               {[
-                { icon: <Cpu className="w-8 h-8" />, value: "98+", label: "Countries" },
-                { icon: <Activity className="w-8 h-8" />, value: "127K", label: "Engineers" },
-                { icon: <Zap className="w-8 h-8" />, value: "50+", label: "Projects" },
-                { icon: <Clock className="w-8 h-8" />, value: "100+", label: "Events" }
+                { icon: <Activity className="w-8 h-8" />, value: "150+", label: "Active Members" },
+                { icon: <Zap className="w-8 h-8" />, value: "5K", label: "Campus Reach" },
+                { icon: <Cpu className="w-8 h-8" />, value: "10+", label: "Events" },
+                { icon: <Box className="w-8 h-8" />, value: "15+", label: "Projects" }
               ].map((stat, index) => (
                 <div key={index} className="relative group">
                   <div className="absolute inset-0 bg-blue-500/10 blur-xl group-hover:bg-blue-500/20 transition-all duration-300"></div>

@@ -91,22 +91,22 @@ export default function CyberpunkNavbar() {
         className={`md:hidden bg-black border-t border-blue-500/10 transition-all duration-300 ease-in-out overflow-hidden absolute left-0 right-0 ${isMobileMenuOpen ? 'max-h-40' : 'max-h-0'}`} // Use absolute positioning
       >
         <ul className={`space-y-4 text-blue-300 pb-3.5 pl-14 pt-1.5 ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
-          <li>
+          <li onClick={toggleMobileMenu}>
             <Link to="/" className="flex items-center gap-2">
               <Home size={20} /> Home
             </Link>
           </li>
-          <li>
+          <li onClick={toggleMobileMenu}>
             <Link to="/gallery" className="flex items-center gap-2">
               <Image size={20} /> Gallery
             </Link>
           </li>
-          <li>
+          <li onClick={toggleMobileMenu}>
             <Link to="/events" className="flex items-center gap-2">
               <Calendar size={20} /> Events
             </Link>
           </li>
-          <li className="group relative">
+          <li onClick={toggleMobileMenu} className="group relative">
             <Link to="/sponsor" className="flex items-center gap-2 group-hover:text-blue-500 transition">
               <Calendar size={20} /> Sponsor
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all"></span>

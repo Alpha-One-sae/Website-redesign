@@ -1,27 +1,34 @@
 import React, { useState } from "react";
 import { Cpu, Zap, Box, Hexagon, X } from "lucide-react";
-import img1 from "../Gallery/IMG-20241019-WA0023.jpg";
-import img2 from "../Gallery/IMG-20241019-WA0041.jpg";
-import img3 from "../Gallery/IMG_20240909_124454.jpg";
-import img4 from "../Gallery/IMG_20240909_131402.jpg";
-import img5 from "../Gallery/IMG_20240909_134003.jpg";
+import mobility1 from "../Gallery/mobility1.jpg"
+import mobility2 from "../Gallery/mobility2.jpg"
+import mobility3 from "../Gallery/mobility3.jpg"
+import mobility4 from "../Gallery/mobility4.jpg"
+import techinvent1 from "../Gallery/techinvent1.JPG"
+import techinvent2 from "../Gallery/techinvent2.jpg"
 import img6 from "../Gallery/cu1.JPG";
 import img7 from "../Gallery/cu2.JPG";
+import technoxian1 from "../Gallery/technoxian1.jpg"
+import technoxian2 from "../Gallery/technoxian2.jpg"
+import technoxian3 from "../Gallery/technoxian3.jpg"
+import technoxian4 from "../Gallery/technoxian4.jpg"
+import technoxian5 from "../Gallery/technoxian5.jpg"
+import technoxian6 from "../Gallery/technoxian6.jpg"
 import img8 from "../Gallery/img_2579.heic";
 import Footer from "./Footer";
 
 const months = [
     {
-        name: "January",
-        images: [img1, img2, img3, img3, img3],
+        name: "Bharat Mobility Expo 2025",
+        images: [mobility4, mobility1, mobility2, mobility3],
     },
     {
-        name: "February",
-        images: [img4, img5],
+        name: "CU Tech-Invent",
+        images: [techinvent1, techinvent2],
     },
     {
-        name: "March",
-        images: [img6, img7],
+        name: "Technoxian WRC 2024",
+        images: [technoxian1, technoxian2, technoxian3, technoxian4, technoxian5, technoxian6,],
     },
 ];
 

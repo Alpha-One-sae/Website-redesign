@@ -86,7 +86,7 @@ export default function Sponsors() {
             {/* Modal for Sponsor Form */}
             {isModalOpen && (
                 <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-[9999]">
-                    <div className="bg-black p-8 rounded-lg max-w-lg w-full relative border border-blue-500">
+                    <div className="bg-black p-8 rounded-lg max-w-lg w-full h-[80%] overflow-y-scroll relative border border-blue-500">
                         {/* Close Button */}
                         <button
                             onClick={closeModal}

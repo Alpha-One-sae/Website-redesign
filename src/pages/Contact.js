@@ -55,7 +55,7 @@ export default function Contact() {
                 >
                   Write a Feedback
                 </button>
-                <p className="text-sm m-3" id="saemail">Email :- sae@uiet.pu</p>
+                <p className="text-sm m-3" id="saemail">Email :- admin@saeuietpu.in</p>
               </div>
             </div>
           </div>

@@ -1,18 +1,33 @@
 import React from "react";
 import { Cpu, Zap, Box, ChevronRight } from "lucide-react";
+import line from "../Asset/Line Follower.png"
+import cad from "../Asset/cad.png"
+import aqua from "../Asset/Aqua Venture.png"
 
 const EventPage = () => {
-  
-  const events = []; 
+  const events = [
+    {
+      title: "Line Follower",
+      description: "Fastest line following competition",
+      image: line
+    },
+    {
+      title: "CAD Design Showdown",
+      description: "Show your CAD prowess",
+      image: cad
+    },
+    {
+      title: "Water Rocket",
+      description: "Ignite the thrusters with water",
+      image: aqua
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-black text-white overflow-hidden relative z-0">
-    
       <div className="fixed inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none z-[-1]">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-black"></div>
       </div>
-
-      
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute w-full h-1 bg-blue-500/20 animate-pulse top-1/4 -skew-y-12"></div>
         <div className="absolute w-1 h-full bg-blue-500/20 animate-pulse left-1/4 -skew-x-12"></div>
@@ -30,7 +45,8 @@ const EventPage = () => {
             </span>
           </h1>
           <p className="text-2xl text-blue-300 max-w-2xl">
-            Join us in shaping the future through innovative and exciting events.
+            Join us in shaping the future through innovative and exciting
+            events.
           </p>
         </div>
         {events.length > 0 ? (
@@ -41,7 +57,12 @@ const EventPage = () => {
                 className="relative group p-6 border border-blue-500/30 rounded-xl bg-black/50 backdrop-blur-sm hover:border-blue-500 transition-all duration-300"
               >
                 <div className="absolute inset-0 bg-blue-500/10 blur-xl group-hover:bg-blue-500/20 transition-all duration-300"></div>
-                <div className="text-3xl font-bold text-white mb-1">{event.title}</div>
+                <div className="mb-[2rem]">
+                  <img className="rounded-tr-[7px] rounded-tl-[7px]" src={event.image} alt="" />
+                </div>
+                <div className="text-3xl font-bold text-white mb-1">
+                  {event.title}
+                </div>
                 <p className="text-blue-300 mb-4">{event.description}</p>
                 <button className="group relative px-8 py-4 bg-blue-500 rounded-lg overflow-hidden hover:bg-blue-600 transition-all duration-300">
                   <div className="absolute inset-0 bg-blue-600 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
