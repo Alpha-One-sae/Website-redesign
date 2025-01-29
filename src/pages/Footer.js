@@ -22,12 +22,12 @@ export default function Footer() {
           <h3 className="text-lg font-semibold text-blue-400">Quick Links</h3>
           <ul className="space-y-1">
             <li>
-              <Link to="/about" className="hover:text-blue-500 transition">
+              <Link  className="hover:text-blue-500 transition">
                 About Us
               </Link>
             </li>
             <li>
-              <Link to="/projects" className="hover:text-blue-500 transition">
+              <Link to="/sae-project-blog/:wing/:projectId" className="hover:text-blue-500 transition">
                 Projects
               </Link>
             </li>
@@ -37,7 +37,7 @@ export default function Footer() {
               </Link>
             </li>
             <li>
-              <Link to="/contact" className="hover:text-blue-500 transition">
+              <Link to="" className="hover:text-blue-500 transition">
                 Contact
               </Link>
             </li>
