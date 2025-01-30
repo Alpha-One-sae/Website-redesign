@@ -1,35 +1,58 @@
-import React, { useState, useEffect } from 'react';
-import { Cpu, Zap, Box, Share2, ChevronRight, Clock, Activity, Hexagon } from 'lucide-react';
-import CyberpunkNavbar from './Navbar';
-import CyberpunkProjects from './Projects';
-import Contact from './Contact';
-import logo from "../Asset/wlogo.png"
-import SAETeams from './SaeTeams';
-import Footer from './Footer';
+import React, { useState, useEffect } from "react";
+import {
+  Cpu,
+  Zap,
+  Box,
+  Share2,
+  ChevronRight,
+  Clock,
+  Activity,
+  Hexagon,
+} from "lucide-react";
+import CyberpunkNavbar from "./Navbar";
+import CyberpunkProjects from "./Projects";
+import Contact from "./Contact";
+import logo from "../Asset/wlogo.png";
+import SAETeams from "./SaeTeams";
+import Footer from "./Footer";
+import Recruitment from "../Component/Recruitment";
 
 const GlowingText = ({ children }) => (
   <span className="relative">
-    <span className="absolute inset-0 -z-10 blur-[2px] text-blue-500 opacity-70">{children}</span>
+    <span className="absolute inset-0 -z-10 blur-[2px] text-blue-500 opacity-70">
+      {children}
+    </span>
     <span className="relative">{children}</span>
   </span>
 );
 
 export default function SAEHomepage() {
   const [scrolled, setScrolled] = useState(0);
+  const [showThankYou, setShowThankYou] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const position = window.scrollY;
       setScrolled(position);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToProjects = () => {
-    const projectsSection = document.getElementById('projects-section');
+    const projectsSection = document.getElementById("projects-section");
     if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth' });
+      projectsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleCloseThankYou = () => {
+    setShowThankYou(false);
+    if (!showThankYou) {
+      document.body.style.overflow = "hidden"; // Disable scrolling
+    } else {
+      document.body.style.overflow = ""; // Re-enable scrolling
     }
   };
 
@@ -55,8 +78,9 @@ export default function SAEHomepage() {
                 <Hexagon className="w-24 h-24 text-blue-400 animate-spin-slow absolute -top-12 -left-12 opacity-50" />
                 <h1 className="text-5xl font-bold">
                   <GlowingText>
-                    SAE UIET PU<br />
-                    Society of Automobile Engineers
+                    SAE UIET PU
+                    <br />
+                    Society of Automotive Engineers
                   </GlowingText>
                 </h1>
                 <Hexagon className="w-24 h-24 text-blue-400 animate-spin-slow absolute -bottom-12 -right-12 opacity-50" />
@@ -67,13 +91,16 @@ export default function SAEHomepage() {
               </p>
 
               <div className="flex gap-6 mt-8">
-                <button className="group relative px-8 py-4 bg-transparent overflow-hidden border border-blue-500 rounded-lg hover:bg-blue-500 hover:text-black transition-all duration-300">
+                <button onClick={()=>setShowThankYou(true)} className="group relative px-8 py-4 bg-transparent overflow-hidden border border-blue-500 rounded-lg hover:bg-blue-500 hover:text-black transition-all duration-300">
                   <div className="absolute inset-0 bg-blue-500 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
                   <span className="relative flex items-center gap-2">
                     Join Our Family 😊 <Share2 size={20} />
                   </span>
                 </button>
-                <button className="group relative px-8 py-4 bg-blue-500 rounded-lg overflow-hidden hover:bg-blue-600 transition-all duration-300" onClick={scrollToProjects}>
+                <button
+                  className="group relative px-8 py-4 bg-blue-500 rounded-lg overflow-hidden hover:bg-blue-600 transition-all duration-300"
+                  onClick={scrollToProjects}
+                >
                   <div className="absolute inset-0 bg-blue-600 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
                   <span className="relative flex items-center gap-2">
                     Explore Our Projects <ChevronRight size={20} />
@@ -83,16 +110,34 @@ export default function SAEHomepage() {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24">
               {[
-                { icon: <Activity className="w-8 h-8" />, value: "150+", label: "Active Members" },
-                { icon: <Zap className="w-8 h-8" />, value: "5K", label: "Campus Reach" },
-                { icon: <Cpu className="w-8 h-8" />, value: "10+", label: "Events" },
-                { icon: <Box className="w-8 h-8" />, value: "15+", label: "Projects" }
+                {
+                  icon: <Activity className="w-8 h-8" />,
+                  value: "150+",
+                  label: "Active Members",
+                },
+                {
+                  icon: <Zap className="w-8 h-8" />,
+                  value: "5K",
+                  label: "Campus Reach",
+                },
+                {
+                  icon: <Cpu className="w-8 h-8" />,
+                  value: "10+",
+                  label: "Events",
+                },
+                {
+                  icon: <Box className="w-8 h-8" />,
+                  value: "15+",
+                  label: "Projects",
+                },
               ].map((stat, index) => (
                 <div key={index} className="relative group">
                   <div className="absolute inset-0 bg-blue-500/10 blur-xl group-hover:bg-blue-500/20 transition-all duration-300"></div>
                   <div className="relative p-6 border border-blue-500/30 rounded-xl bg-black/50 backdrop-blur-sm hover:border-blue-500 transition-all duration-300">
                     <div className="text-blue-400 mb-2">{stat.icon}</div>
-                    <div className="text-3xl font-bold text-white mb-1">{stat.value}</div>
+                    <div className="text-3xl font-bold text-white mb-1">
+                      {stat.value}
+                    </div>
                     <div className="text-blue-300">{stat.label}</div>
                     <div className="absolute -bottom-1 left-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent transform -translate-x-1/2 animate-pulse"></div>
                   </div>
@@ -101,7 +146,7 @@ export default function SAEHomepage() {
             </div>
             {/* SAE teams*/}
             <div id="Teams-section">
-              <SAETeams/>
+              <SAETeams />
             </div>
             {/* project */}
             <div id="projects-section" className="">
@@ -113,7 +158,7 @@ export default function SAEHomepage() {
             </div>
             {/* footer */}
             <div id="footer-section">
-              <Footer/>
+              <Footer />
             </div>
             <div className="absolute top-1/4 right-1/4">
               <Box className="w-8 h-8 text-blue-500 animate-pulse" />
@@ -127,6 +172,7 @@ export default function SAEHomepage() {
           </div>
         </div>
       </div>
+      <Recruitment isOpen={showThankYou} onClose={handleCloseThankYou} />
     </>
   );
 }

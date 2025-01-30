@@ -23,27 +23,29 @@ import img26 from "../Gallery/image18.jpg";
 import img27 from "../Gallery/image19.jpg";
 import img28 from "../Gallery/image20.jpg";
 import img29 from "../Gallery/image21.jpg";
+import img30 from "../Gallery/image22.jpg"
 
 const teamMembers = [
-  { category: "Executive Board", name: "Akshit Kain", title: "Chairperson", image: img9, linkedin: "#", instagram: "#" },
-  { category: "Executive Board", name: "Parth Bansal", title: "Vice Chairperson", image: img10, linkedin: "#", instagram: "#" },
-  { category: "Executive Board", name: "Vinayak Sharma", title: "Club Co-ordinator", image: img11, linkedin: "#", instagram: "#" },
-  { category: "Executive Board", name: "Prashant Singh", title: "Secretary", image: img12, linkedin: "#", instagram: "#" },
-  { category: "Executive Board", name: "Saksham Rathore", title: "Treasurer", image: img13, linkedin: "#", instagram: "#" },
-  { category: "Executive Board", name: "Gaurav Patel", title: "Software & IT Chair", image: img14, linkedin: "#", instagram: "#" },
-  { category: "Executive Board", name: "Harsh Bassal", title: "Technical Chair", image: img15, linkedin: "#", instagram: "#" },
-  { category: "Executive Board", name: "Shubham Kumar", title: "Program Chair", image: img16, linkedin: "#", instagram: "#" },
-  { category: "Executive Board", name: "Yeeshu", title: "Finance Chair", image: img17, linkedin: "#", instagram: "#" },
-  { category: "Core Committee", name: "Ambar Chaurasiya", title: " Member", image: img18, linkedin: "#", instagram: "#" },
-  { category: "Core Committee", name: "Moksh Garg", title: " Member", image: img19, linkedin: "#", instagram: "#" },
-  { category: "Core Committee", name: "Nikhil Mathuriya", title: " Member", image: img20, linkedin: "#", instagram: "#" },
-  { category: "Core Committee", name: "Pratimaan Tripathi", title: "Member", image: img21, linkedin: "#", instagram: "#" },
-  { category: "Core Committee", name: "Rounak Kumar Jha", title: " Member", image: img22, linkedin: "#", instagram: "#" },
-  { category: "Core Committee", name: "Sahil Minz", title: " Member", image: img23, linkedin: "#", instagram: "#" },
-  { category: "Core Committee", name: "Shubham Garg", title: " Member", image: img25, linkedin: "#", instagram: "#" },
-  { category: "Core Committee", name: "Vinay Kumar", title: " Member", image: img27, linkedin: "#", instagram: "#" },
-  { category: "Core Committee", name: "Waquee Mubarak", title: " Member", image: img28, linkedin: "#", instagram: "#" },
-  { category: "Core Committee", name: "Yatharth Pal", title: " Member", image: img29, linkedin: "#", instagram: "#" },
+  { category: "Executive Board", name: "Akshit Kain", title: "Chairperson", image: img9, linkedin: "https://www.linkedin.com/in/akshitkain/", instagram: "https://www.instagram.com/akshit_kain/" },
+  { category: "Executive Board", name: "Parth Bansal", title: "Vice Chairperson", image: img10, linkedin: "https://www.linkedin.com/in/parth-bansal-627724290  ", instagram: "https://www.instagram.com/parth._.04/profilecard/?igsh=MW5vYWozamtxc2pqNw==" },
+  { category: "Executive Board", name: "Vinayak Sharma", title: "Club Co-ordinator", image: img11, linkedin: "https://www.linkedin.com/in/vinayak-sharma-b8379a302/", instagram: "https://www.instagram.com/ig.vinayaksharma/?utm_source=ig_web_button_share_sheet" },
+  { category: "Executive Board", name: "Prashant Singh", title: "Secretary", image: img12, linkedin: "https://www.linkedin.com/in/prashant-singh-30314a2a9/", instagram: "https://www.instagram.com/_prashant__4646/" },
+  { category: "Executive Board", name: "Saksham Rathore", title: "Treasurer", image: img13, linkedin: "https://www.linkedin.com/in/saksham-rathore-2330ba305", instagram: "https://www.instagram.com/sakshamrathore214/#" },
+  { category: "Executive Board", name: "Gaurav Patel", title: "Software & IT Chair", image: img14, linkedin: "https://www.linkedin.com/in/gaurav-patel-50a6041b5/", instagram: "https://www.instagram.com/gaurav6.0/" },
+  { category: "Executive Board", name: "Harsh Bassal", title: "Technical Chair", image: img15, linkedin: "https://www.linkedin.com/in/harsh-bassal-3a47811b0/", instagram: "https://www.instagram.com/harsh_bassal_/" },
+  { category: "Executive Board", name: "Shubham Kumar", title: "Program Chair", image: img16, linkedin: "#", instagram: "https://www.linkedin.com/in/shubhamkumar56018/" },
+  { category: "Executive Board", name: "Yeeshu", title: "Finance Chair", image: img17, linkedin: "https://www.linkedin.com/in/yeeshu-nayak-314787251", instagram: "https://www.instagram.com/yeeshu0111/profilecard/?igsh=MXBycjRqMjdoa2UzMg==" },
+  { category: "Core Committee", name: "Ambar Chaurasiya", title: " Member", image: img18, linkedin: "https://www.linkedin.com/in/ambar-chaurasiya-5759242a9", instagram: "https://www.instagram.com/ambar_chaurasiya?igsh=MW1pZDAyNGRkZnhhcg==" },
+  { category: "Core Committee", name: "Moksh Garg", title: " Member", image: img19, linkedin: "https://www.linkedin.com/in/moksh-garg-6092b7291", instagram: "https://www.instagram.com/mokshgarrg/profilecard/?igsh=d3MzZDhoaWhudjJ3" },
+  { category: "Core Committee", name: "Nikhil Mathuriya", title: " Member", image: img20, linkedin: "#", instagram: "https://www.instagram.com/nikhilmathuriya9/profilecard/?igsh=YWQ4Mzk0MjFsaDd1" },
+  { category: "Core Committee", name: "Pratimaan Tripathi", title: "Member", image: img21, linkedin: "http://linkedin.com/in/pratimaan-tripathi-9a80b2294", instagram: "https://www.instagram.com/_pratimaannnn/profilecard" },
+  { category: "Core Committee", name: "Rounak Kumar Jha", title: " Member", image: img22, linkedin: "https://www.linkedin.com/in/rounak-jha-92a867333/", instagram: "https://www.instagram.com/jharounak13/" },
+  { category: "Core Committee", name: "Sahil Minz", title: " Member", image: img23, linkedin: "https://www.linkedin.com/in/sahil-minz-939655275?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagram: "https://www.instagram.com/sahil_minz13/profilecard/?igsh=MWJkOW45cmo0aG16ZQ==" },
+  { category: "Core Committee", name: "Shivangi Singh", title: " Member", image: img30, linkedin: "https://www.linkedin.com/in/shivangi-jha-a32938258", instagram: "https://www.instagram.com/__enchanted_.11?igsh=MXMyNnZnOWhyZ2oycA==" },
+  { category: "Core Committee", name: "Shubham Garg", title: " Member", image: img25, linkedin: "https://www.linkedin.com/in/shubham-garg-48ab3a289", instagram: "https://www.instagram.com/shubham_garg4444/profilecard/?igsh=MXYwYmg2MnlhYjFkZw==" },
+  { category: "Core Committee", name: "Vinay Kumar", title: " Member", image: img27, linkedin: "https://www.linkedin.com/in/vinay-kumar-100a94311", instagram: "https://www.instagram.com/hii_i_am_vinay/profilecard/?igsh=N3BubzN4bjYzNWsx" },
+  { category: "Core Committee", name: "Waquee Mubarak", title: " Member", image: img28, linkedin: "https://www.linkedin.com/in/waquee-mubarak-a69041208", instagram: "https://www.instagram.com/waquee_mk/profilecard/?igsh=dTUwejdsdnpicGRw" },
+  { category: "Core Committee", name: "Yatharth Pal", title: " Member", image: img29, linkedin: "https://www.linkedin.com/in/yatharth-pal-3b31a4226", instagram: "https://www.instagram.com/yattharrthh/profilecard/?igsh=MXZvbzZhYjUyMXBqZg==" },
 ];
 
 const GlowingText = ({ children }) => (

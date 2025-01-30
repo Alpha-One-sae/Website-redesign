@@ -1,77 +1,141 @@
+import { ChevronRight, Cpu, Hexagon, Share2 } from "lucide-react";
 import React from "react";
-import { Cpu, Zap, Box, ChevronRight } from "lucide-react";
+import { useParams } from "react-router-dom";
 
-const SAEblogs = () => {
-  
-  const events = []; 
+const GlowingText = ({ children }) => (
+  <span className="relative">
+    <span className="absolute inset-0 -z-10 blur-[2px] text-blue-500 opacity-70">
+      {children}
+    </span>
+    <span className="relative">{children}</span>
+  </span>
+);
 
-  return (
-    <div className="min-h-screen bg-black text-white overflow-hidden relative z-0">
-    
-      <div className="fixed inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none z-[-1]">
-        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-black"></div>
-      </div>
-
-      
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute w-full h-1 bg-blue-500/20 animate-pulse top-1/4 -skew-y-12"></div>
-        <div className="absolute w-1 h-full bg-blue-500/20 animate-pulse left-1/4 -skew-x-12"></div>
-        <div className="absolute w-full h-1 bg-blue-500/20 animate-pulse bottom-1/3 -skew-y-12"></div>
-      </div>
-
-      <div className="relative container mx-auto px-6 pt-32">
-        <div className="flex flex-col items-center text-center space-y-8">
-          <h1 className="text-5xl font-bold">
-            <span className="relative">
-              <span className="absolute inset-0 -z-10 blur-[2px] text-blue-500 opacity-70">
-               Project Description
-              </span>
-              <span className="relative">Project Description </span>
-            </span>
-          </h1>
-          <p className="text-2xl text-blue-300 max-w-2xl">
-            
-          </p>
-        </div>
-        {events.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-            {events.map((event, index) => (
-              <div
-                key={index}
-                className="relative group p-6 border border-blue-500/30 rounded-xl bg-black/50 backdrop-blur-sm hover:border-blue-500 transition-all duration-300"
-              >
-                <div className="absolute inset-0 bg-blue-500/10 blur-xl group-hover:bg-blue-500/20 transition-all duration-300"></div>
-                <div className="text-3xl font-bold text-white mb-1">{event.title}</div>
-                <p className="text-blue-300 mb-4">{event.description}</p>
-                <button className="group relative px-8 py-4 bg-blue-500 rounded-lg overflow-hidden hover:bg-blue-600 transition-all duration-300">
-                  <div className="absolute inset-0 bg-blue-600 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
-                  <span className="relative flex items-center gap-2">
-                    Learn More <ChevronRight size={20} />
-                  </span>
-                </button>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <div className="mt-16 text-center text-xl text-blue-300">
-            <div className="p-6 border border-blue-500/30 rounded-xl bg-black/50 backdrop-blur-sm inline-block">
-              <p>Yet to be uploaded</p>
-             
-            </div>
-          </div>
-        )}
-      </div>
-      <div className="absolute top-1/4 right-1/4">
-        <Box className="w-8 h-8 text-blue-500 animate-pulse" />
-      </div>
-      <div className="absolute bottom-1/4 left-1/4">
-        <Zap className="w-10 h-10 text-blue-400 animate-ping" />
-      </div>
-      <div className="absolute top-1/2 right-1/3">
-        <Cpu className="w-6 h-6 text-blue-300 animate-bounce" />
-      </div>
-    </div>
-  );
+const projectDetails = {
+  "abhedya-robotics": {
+    1: {
+      title: "Robowars",
+      description: "Battle robot designed for combat competitions",
+      details: "Detailed info about Robowars...",
+    },
+    2: {
+      title: "Maze Solver",
+      description: "Robot designed to navigate and solve mazes autonomously",
+      details: "Detailed info about Maze Solver...",
+    },
+    // add more project details
+  },
+  "garuda-motorsports": {
+    1: {
+      title: "H-BAJA",
+      description: "Off-road vehicle project done by Garuda Motorsports",
+      details: "Detailed info about H-BAJA...",
+    },
+  },
+  "vayuveer-aerospace": {
+    1: {
+      title: "RC Craft",
+      description:
+        "Remote-controlled aircraft designed for aerospace experiments",
+      details: "Detailed info about RC Craft...",
+    },
+    2: {
+      title: "Drone Rescue",
+      description: "Drone capable of executing rescue missions",
+      details: "Detailed info about Drone Rescue...",
+    },
+  },
 };
 
-export default SAEblogs;
+export default function ProjectDetails() {
+  const { wing, projectId } = useParams();
+  const project = projectDetails[wing] && projectDetails[wing][projectId];
+
+  if (!project) {
+    return (
+      <>
+        <div className="min-h-screen bg-black text-white overflow-hidden relative z-0">
+          <div className="fixed inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none z-[-1]">
+            <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-black"></div>
+          </div>
+          <div className="container mx-auto px-6 pt-32">
+            <h2 className="text-5xl font-bold mb-12 text-center">
+              {project ? project.title : "Project Details"}
+            </h2>
+
+            <div className="flex justify-center">
+              <div className="group relative p-6 border border-blue-500/30 rounded-xl bg-black/50 backdrop-blur-sm hover:border-blue-500 transition-all duration-300 cursor-pointer z-[50]">
+                <div className="absolute inset-0 bg-blue-500/10 blur-xl group-hover:bg-blue-500/20 transition-all duration-300"></div>
+                <div className="relative">
+                  <div className="text-blue-400 mb-2">
+                    <Cpu className="w-8 h-8" />
+                  </div>
+                  {project ? (
+                    <>
+                      <h3 className="text-2xl font-bold mb-1">
+                        {project.title}
+                      </h3>
+                      <p className="text-blue-300">{project.description}</p>
+                    </>
+                  ) : (
+                    <div className="text-center">
+                      <h3 className="text-2xl font-bold mb-1">
+                        Content Yet to be Uploaded
+                      </h3>
+                      <p className="text-blue-300">
+                        Please check back later for more details.
+                      </p>
+                    </div>
+                  )}
+                </div>
+                <div className="absolute -bottom-1 left-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent transform -translate-x-1/2 animate-pulse"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <div className="min-h-screen bg-black text-white overflow-hidden relative z-0">
+        <div className="fixed inset-0 bg-[linear-gradient(to_right,#0f172a_1px,transparent_1px),linear-gradient(to_bottom,#0f172a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none z-[-1]">
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-black"></div>
+        </div>
+        <div className="container mx-auto px-6 pt-32">
+          <h2 className="text-5xl font-bold mb-12 text-center">
+            {project ? project.title : "Project Details"}
+          </h2>
+
+          <div className="flex justify-center">
+            <div className="group relative p-6 border border-blue-500/30 rounded-xl bg-black/50 backdrop-blur-sm hover:border-blue-500 transition-all duration-300 cursor-pointer z-[50]">
+              <div className="absolute inset-0 bg-blue-500/10 blur-xl group-hover:bg-blue-500/20 transition-all duration-300"></div>
+              <div className="relative">
+                <div className="text-blue-400 mb-2">
+                  <Cpu className="w-8 h-8" />
+                </div>
+                {project ? (
+                  <>
+                    <h3 className="text-2xl font-bold mb-1">{project.title}</h3>
+                    <p className="text-blue-300">{project.description}</p>
+                  </>
+                ) : (
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold mb-1">
+                      Content Yet to be Uploaded
+                    </h3>
+                    <p className="text-blue-300">
+                      Please check back later for more details.
+                    </p>
+                  </div>
+                )}
+              </div>
+              <div className="absolute -bottom-1 left-1/2 w-1/2 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent transform -translate-x-1/2 animate-pulse"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
