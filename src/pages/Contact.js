@@ -3,6 +3,7 @@ import '../Css/Form.css';
 import pen from "../Asset/image.png";
 import pin from "../Asset/loc.png";
 import Foimg from '../Asset/formsub1.png';
+import Feedback from '../Component/Feedback';
 
 const GlowingText = ({ children }) => (
     <span className="relative">
@@ -13,6 +14,7 @@ const GlowingText = ({ children }) => (
 export default function Contact() {
   const [isOpen, setIsOpen] = useState(false);
   const formRef = useRef(null);
+  const [showThankYou, setShowThankYou] = useState(false);
 
   const toggleForm = () => {
     setIsOpen(!isOpen);
@@ -27,9 +29,22 @@ export default function Contact() {
   };
 
   const handleFormSubmit = (event) => {
-    event.preventDefault(); // Prevent form submission from refreshing the page
-    console.log('Form submitted'); // You can handle form data processing here
-    // Optionally reset form fields or provide success feedback
+    event.preventDefault();
+    setShowThankYou(true); 
+    console.log('Form submitted');
+    setIsOpen(false) 
+    
+  };
+  
+  const handleCloseThankYou = () => {
+    setShowThankYou(false);
+    if (!showThankYou) {
+      document.body.style.overflow = 'hidden'; // Disable scrolling
+    } else {
+      document.body.style.overflow = ''; // Re-enable scrolling
+    }
+   
+    
   };
 
   return (
@@ -104,6 +119,7 @@ export default function Contact() {
           </form>
         </div>
       </div>
+      <Feedback isOpen={showThankYou} onClose={handleCloseThankYou}/>
     </>
   );
 }

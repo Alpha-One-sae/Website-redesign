@@ -23,6 +23,15 @@ import img26 from "../Gallery/image18.jpg";
 import img27 from "../Gallery/image19.jpg";
 import img28 from "../Gallery/image20.jpg";
 import img29 from "../Gallery/image21.jpg";
+import img30 from "../Gallery/ayush.jpeg";
+import img31 from "../Gallery/ganesh.jpg";
+import img32 from "../Gallery/sanchi.jpg";
+import img33 from "../Gallery/padam.jpeg";
+import img34 from "../Gallery/shubh.webp";
+import img35 from "../Gallery/aaditi.jpg";
+import img36 from "../Gallery/Addhar.jpg";
+import img37 from "../Gallery/atri.jpg";
+import img38 from "../Gallery/divanyanshu.jpg";
 
 const teamMembers = [
   { category: "Executive Board", name: "Akshit Kain", title: "Chairperson", image: img9, linkedin: "#", instagram: "#" },
@@ -46,6 +55,16 @@ const teamMembers = [
   { category: "Core Committee", name: "Vinay Kumar", title: " Member", image: img27, linkedin: "#", instagram: "#" },
   { category: "Core Committee", name: "Waquee Mubarak", title: " Member", image: img28, linkedin: "#", instagram: "#" },
   { category: "Core Committee", name: "Yatharth Pal", title: " Member", image: img29, linkedin: "#", instagram: "#" },
+  { category: "Maintainer", name: "Ayush Anand", title: " Member", image: img30, linkedin: "#", instagram: "#" },
+  { category: "Maintainer", name: "Shubham Garg", title: " Member", image: img34, linkedin: "#", instagram: "#" },
+  { category: "Maintainer", name: "Sanchi Agarwal", title: " Member", image: img32, linkedin: "#", instagram: "#" },
+  { category: "Maintainer", name: "Aaditi", title: " Member", image: img35, linkedin: "#", instagram: "#" },
+  { category: "Maintainer", name: "Divaynshu", title: " Member", image: img38, linkedin: "#", instagram: "#" },
+  { category: "Maintainer", name: "Ganesh Pandey", title: " Member", image: img31, linkedin: "#", instagram: "#" },
+  { category: "Maintainer", name: "Padam", title: " Member", image: img33, linkedin: "#", instagram: "#" },
+  { category: "Maintainer", name: "Aadhar Pradhan", title: " Member", image: img36, linkedin: "#", instagram: "#" },
+  { category: "Maintainer", name: "Divyansh Attri", title: " Member", image: img37, linkedin: "#", instagram: "#" },
+
 ];
 
 const GlowingText = ({ children }) => (
@@ -56,7 +75,7 @@ const GlowingText = ({ children }) => (
 );
 
 const MeetTheTeam = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Executive Board");
+  const [selectedCategory, setSelectedCategory] = useState("Maintainer");
 
   const filteredMembers = teamMembers.filter((member) => member.category === selectedCategory);
 
@@ -75,13 +94,19 @@ const MeetTheTeam = () => {
         <div className="flex justify-center mb-8 space-x-4 pt-12">
           <button
             onClick={() => setSelectedCategory("Executive Board")}
-            className={`px-4 py-2 rounded-full ${selectedCategory === "Executive Board" ? "bg-blue-500 text-white" : "bg-gray-800 text-gray-300"}`}
+            className={`px-1 py-2 sm:px-4 rounded-full ${selectedCategory === "Executive Board" ? "bg-blue-500 text-white" : "bg-gray-800 text-gray-300"}`}
           >
             Executive Board
           </button>
           <button
+            onClick={() => setSelectedCategory("Maintainer")}
+            className={`px-1 py-2 sm:px-4 rounded-full ${selectedCategory === "Maintainer" ? "bg-blue-500 text-white" : "bg-gray-800 text-gray-300"}`}
+          >
+            Maintainer
+          </button>
+          <button
             onClick={() => setSelectedCategory("Core Committee")}
-            className={`px-4 py-2 rounded-full ${selectedCategory === "Core Committee" ? "bg-blue-500 text-white" : "bg-gray-800 text-gray-300"}`}
+            className={`px-1 py-2 sm:px-4 rounded-full ${selectedCategory === "Core Committee" ? "bg-blue-500 text-white" : "bg-gray-800 text-gray-300"}`}
           >
             Core Committee
           </button>
@@ -99,7 +124,7 @@ const MeetTheTeam = () => {
             <img
               src={member.image}
               alt={member.name}
-              className="w-full h-64 object-cover rounded-t-lg"
+              className="w-full h-[30rem] object-cover rounded-t-lg"
             />
             {/* Always Visible Content */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-80"></div>
@@ -143,4 +168,7 @@ const MeetTheTeam = () => {
 };
 
 export default MeetTheTeam;
+
+
+
 

@@ -88,22 +88,7 @@ export default function Gallery() {
                             </div>
                         </div>
                     ))}
-
                     {/* Image Preview Modal */}
-                    {selectedImage && (
-                        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-[9999]">
-                            <div className="relative">
-                                <img src={selectedImage} alt="Preview" className="max-w-full max-h-screen rounded-lg shadow-lg" />
-                                <button
-                                    className="absolute top-4 right-4 text-white bg-red-500 p-2 rounded-full hover:bg-red-600 transition"
-                                    onClick={closeImagePreview}
-                                >
-                                    <X size={24} />
-                                </button>
-                            </div>
-                        </div>
-                    )}
-
                     <div className="absolute bottom-1/4 right-1/4">
                         <Hexagon className="w-10 h-10 text-blue-500 animate-pulse opacity-10 z-[-1]" />
                     </div>
@@ -121,6 +106,19 @@ export default function Gallery() {
                     </div>
                 </div>
             </div>
+            {selectedImage && (
+                <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-[9999]">
+                    <div className="relative">
+                        <img src={selectedImage} alt="Preview" className="max-w-full max-h-screen rounded-lg shadow-lg" />
+                        <button
+                            className="absolute top-4 right-4 text-white bg-red-500 p-2 rounded-full hover:bg-red-600 transition"
+                            onClick={closeImagePreview}
+                        >
+                            <X size={24} />
+                        </button>
+                    </div>
+                </div>
+            )}
         </>
     );
 }

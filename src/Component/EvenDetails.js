@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useEffect,useState} from "react";
 import { useParams } from "react-router-dom";
 import { Circle, Heart, ChevronRight, MapPinHouse, Calendar, Share2, UsersRound, Clock11 } from "lucide-react";
 
@@ -116,6 +116,21 @@ const eventDetails = {
 };
 
 export default function EventDetailsPage() {
+  const [scrolled, setScrolled] = useState(0);
+  
+  useEffect(() => {
+   
+    window.scrollTo(0, 0);
+
+    const handleScroll = () => {
+      const position = window.scrollY;
+      setScrolled(position);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const { eventId } = useParams();
   const event = eventDetails[eventId];
 
