@@ -158,20 +158,18 @@ const eventDetails = {
   1: {
     name: "Aqua Venture",
     location: "UIET Chandigarh",
-    startDate: "21 Feb 2025",
+    startDate: "19 Feb 2025",
     endDate: "",
     entry: "₹ 199",
     prize: "₹ 3000",
     team: "3 - 5 Members",
-    link: "https://forms.gle/HN5roCVksyfAsBAL7",
+    link: "https://forms.gle/1sT4HYqwCBf4XE4z9",
     objective:
       "To design and fabricate a water-based rocket that will be propelled using water pressure solely and capable of achieving the maximum vertical height. The water rocket must rely completely on water pressure as a propellant.",
     stages: [],
     generalrules: [],
     botspecification: [],
-    COMPETITIONFORMAT: [
-      "The competition requires the participants to design the objects. The participants will have to submit a report and the CAD file. This event runs for 3 hours. The problem statement will be released at around 15 min after the designated time. Then the participant will be required to do 1st and 2nd  questions.",
-    ],
+    COMPETITIONFORMAT: [],
     competitionRules: [
       "Competition Rounds: There will be total of two competing rounds. Out of which the best out of two will be considered.",
       "The team must design their own water rocket and launch pads with safety.Commercial water rocket kits and launch pads won’t be allowed.",
@@ -205,11 +203,97 @@ const eventDetails = {
       "Organizer shall have final authority over the interpretation and application of all Rules and decisions. Decisions by organizers in regards to the interpretation and application of the Rules, the Tournament and the Program shall be final and not subject to challenge or appeal",
     ],
   },
+  4: {
+    name: "FOSS Hack",
+    location: "UIET Chandigarh",
+    startDate: "22 Feb 2025",
+    endDate: "",
+    entry: "Free",
+    prize: "₹ 10 lakhs",
+    team: "3 - 5 Members",
+    link: "https://fossunited.org/hack/fosshack25",
+    objective:
+      "Pclub UIET in collaboration with FOSS United presents FOSS Hack 2025 – the ultimate hackathon to unleash your potential and bring your ideas to life.",
+    stages: [],
+    generalrules: [],
+    botspecification: [],
+    COMPETITIONFORMAT: [],
+    competitionRules: [],
+    sampleProblemStatement: [
+      "24 Hours Offline (Chandigarh – Limited Seats)",
+      "36 Hours Online (Unlimited Participation)",
+    ],
+    judging: [],
+    disqualify: [],
+    markingScheme: [],
+    importantNote: [],
+  },
+  5: {
+    name: "Quiz Show",
+    location: "UIET Chandigarh",
+    startDate: "19-22 Feb 2025",
+    endDate: "",
+    entry: "₹ 100",
+    prize: "₹ 3000",
+    team: "2 - 4 Members",
+    link: "https://docs.google.com/forms/d/e/1FAIpQLSdWTlpdN_vwBZOr8Ric2ZrLFXfh5A9VGhWrNpZww_R0H8OD_A/viewform",
+    objective:
+      "The Technical Quiz Game Show, is an exhilarating challenge designed to test participants' technical knowledge in a dynamic game-show-inspired format. This event aims to engage students in an interactive and competitive environment while fostering a spirit of learning and teamwork.",
+    stages: [],
+    generalrules: [],
+    botspecification: [],
+    COMPETITIONFORMAT: [
+      "The quiz will follow a game-show-inspired format.",
+      "Participants will compete in two unique quiz rounds.",
+      "Use of the internet or any external resources is strictly prohibited.",
+    ],
+    competitionRules: [],
+    sampleProblemStatement: [],
+    judging: [],
+    disqualify: [],
+    markingScheme: [],
+    importantNote: [
+      "The Programming Club UIET reserves the right to disqualify any team that violates the event rules.",
+      "The decision of the event organizers will be final and binding.",
+    ],
+  },
+  6: {
+    name: "FIFA Competition",
+    location: "UIET Chandigarh",
+    startDate: "19 Feb 2025",
+    endDate: "",
+    entry: "₹ 100",
+    prize: "₹ 5000",
+    team: "Solo | Duo",
+    link: "https://forms.gle/1kNca6XKVnCr1QkQA",
+    objective:
+      "Compete against the best and showcase your FIFA skills to dominate the leaderboard and win exciting rewards!",
+    stages: [],
+    generalrules: [],
+    botspecification: [],
+    COMPETITIONFORMAT: [
+      "Knockout-style competition, 1v1 matches or 2v2 matches.",
+      "Each match will be played with two 5-minute halves.",
+      "Extra time and penalty shootouts in case of a draw.",
+    ],
+    competitionRules: [],
+    sampleProblemStatement: [
+      "Teams: Choose your favorite team from the FIFA roster.",
+      "Use your preferred control device (joystick, keyboard, etc.)",
+    ],
+    judging: [],
+    disqualify: [],
+    markingScheme: [],
+    importantNote: [
+      "No external help allowed.",
+      "Sportsmanship is a must—disrespectful behavior will lead to disqualification.",
+    ],
+  },
 };
 
 export default function EventDetailsPage() {
   const date1 = new Date("2025-02-18");
-  const date2 = new Date("2025-01-29");
+  const date2 = new Date();
 
   const diffTime = Math.abs(date2 - date1);
   const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
@@ -382,32 +466,40 @@ export default function EventDetailsPage() {
             ) : (
               <></>
             )}
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg text-white border border-blue-500 hover:shadow-blue-500/50 transition-all duration-300">
-              <h3 className="text-lg font-semibold mb-4 text-blue-400">
-                {" "}
-                Competition Format
-              </h3>
-              <ul className="list-inside space-y-2">
-                {event.COMPETITIONFORMAT.map((rule, index) => (
-                  <li key={index} className="text-sm text-gray-300">
-                    {rule}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {event.COMPETITIONFORMAT.length != 0 ? (
+              <div className="bg-gray-800 p-6 rounded-lg shadow-lg text-white border border-blue-500 hover:shadow-blue-500/50 transition-all duration-300">
+                <h3 className="text-lg font-semibold mb-4 text-blue-400">
+                  {" "}
+                  Competition Format
+                </h3>
+                <ul className="list-inside space-y-2">
+                  {event.COMPETITIONFORMAT.map((rule, index) => (
+                    <li key={index} className="text-sm text-gray-300">
+                      {rule}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <></>
+            )}
 
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg text-white border border-blue-500 hover:shadow-blue-500/50 transition-all duration-300">
-              <h3 className="text-lg font-semibold mb-4 text-blue-400">
-                Competition Rules
-              </h3>
-              <ul className="list-disc ml-8 space-y-2">
-                {event.competitionRules.map((rule, index) => (
-                  <li key={index} className="text-sm text-gray-300">
-                    {rule}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {event.competitionRules.length != 0 ? (
+              <div className="bg-gray-800 p-6 rounded-lg shadow-lg text-white border border-blue-500 hover:shadow-blue-500/50 transition-all duration-300">
+                <h3 className="text-lg font-semibold mb-4 text-blue-400">
+                  Competition Rules
+                </h3>
+                <ul className="list-disc ml-8 space-y-2">
+                  {event.competitionRules.map((rule, index) => (
+                    <li key={index} className="text-sm text-gray-300">
+                      {rule}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <></>
+            )}
             {event.sampleProblemStatement.length != 0 ? (
               <div className="bg-gray-800 p-6 rounded-lg shadow-lg text-white border border-blue-500 hover:shadow-blue-500/50 transition-all duration-300">
                 <h3 className="text-lg font-semibold mb-4 text-blue-400">
@@ -421,7 +513,7 @@ export default function EventDetailsPage() {
                   ))}
                 </ul>
               </div>
-            ) : (
+            ) : event.disqualify.length != 0 ? (
               <div className="bg-gray-800 p-6 rounded-lg shadow-lg text-white border border-blue-500 hover:shadow-blue-500/50 transition-all duration-300">
                 <h3 className="text-lg font-semibold mb-4 text-blue-400">
                   Disqualifying Criteria
@@ -434,6 +526,8 @@ export default function EventDetailsPage() {
                   ))}
                 </ul>
               </div>
+            ) : (
+              <></>
             )}
             {event.judging.length != 0 ? (
               <div className="bg-gray-800 p-6 rounded-lg shadow-lg text-white border border-blue-500 hover:shadow-blue-500/50 transition-all duration-300">
@@ -467,18 +561,22 @@ export default function EventDetailsPage() {
             ) : (
               <></>
             )}
-            <div className="bg-gray-800 p-6 rounded-lg shadow-lg text-white border border-blue-500 hover:shadow-blue-500/50 transition-all duration-300">
-              <h3 className="text-lg font-semibold mb-4 text-blue-400">
-                Important Note
-              </h3>
-              <ul className="list-disc ml-8 space-y-3">
-                {event.importantNote.map((note, index) => (
-                  <li key={index} className="text-sm text-gray-300">
-                    {note}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {event.importantNote.length != 0 ? (
+              <div className="bg-gray-800 p-6 rounded-lg shadow-lg text-white border border-blue-500 hover:shadow-blue-500/50 transition-all duration-300">
+                <h3 className="text-lg font-semibold mb-4 text-blue-400">
+                  Important Note
+                </h3>
+                <ul className="list-disc ml-8 space-y-3">
+                  {event.importantNote.map((note, index) => (
+                    <li key={index} className="text-sm text-gray-300">
+                      {note}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <></>
+            )}
           </div>
         </div>
       </div>

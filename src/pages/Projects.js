@@ -5,6 +5,13 @@ import { useNavigate } from 'react-router-dom';
 
 const projectCategories = [
   {
+    wing: "Garuda Motorsports",
+    projects: [
+      { id: 1, title: "hBAJA", description: "Hydrogen-CNG ATV designed to balance efficiency and off road performance" },
+      { id: 2, title: "IC Go-Kart", description: "High performance kart with 125 cc engine designed to prioritise stability and handling." },
+    ],
+  },
+  {
     wing: "Abhedya Robotics",
     projects: [
       { id: 1, title: "Robowars", description: "Battle robot designed for combat competitions" },
@@ -13,13 +20,6 @@ const projectCategories = [
       { id: 4, title: "Self-Balancing Bot", description: "Two-wheeled robot with a gyroscope for self-balancing" },
       { id: 6, title: "RC Car", description: "Remote-controlled car for dynamic movement" },
       { id: 7, title: "Robosoccer", description: "Soccer-playing robots for robotics competitions" },
-    ],
-  },
-  {
-    wing: "Garuda Motorsports",
-    projects: [
-      { id: 1, title: "hBAJA", description: "Hydrogen-CNG ATV designed to balance efficiency and off road performance" },
-      { id: 2, title: "IC Go-Kart", description: "High performance kart with 125 cc engine designed to prioritise stability and handling." },
     ],
   },
   {

@@ -23,7 +23,16 @@ import img26 from "../Gallery/image18.jpg";
 import img27 from "../Gallery/image19.jpg";
 import img28 from "../Gallery/image20.jpg";
 import img29 from "../Gallery/image21.jpg";
-import img30 from "../Gallery/image22.jpg"
+import img0 from "../Gallery/image22.jpg"
+import img30 from "../Gallery/ayush.jpeg";
+import img31 from "../Gallery/ganesh.jpg";
+import img32 from "../Gallery/sanchi.jpg";
+import img33 from "../Gallery/padam.jpeg";
+import img34 from "../Gallery/shubh.webp";
+import img35 from "../Gallery/aaditi.jpg";
+import img36 from "../Gallery/Addhar.jpg";
+import img37 from "../Gallery/atri.jpg";
+import img38 from "../Gallery/divanyanshu.jpg";
 
 const teamMembers = [
   { category: "Executive Board", name: "Akshit Kain", title: "Chairperson", image: img9, linkedin: "https://www.linkedin.com/in/akshitkain/", instagram: "https://www.instagram.com/akshit_kain/" },
@@ -41,11 +50,20 @@ const teamMembers = [
   { category: "Core Committee", name: "Pratimaan Tripathi", title: "Member", image: img21, linkedin: "http://linkedin.com/in/pratimaan-tripathi-9a80b2294", instagram: "https://www.instagram.com/_pratimaannnn/profilecard" },
   { category: "Core Committee", name: "Rounak Kumar Jha", title: " Member", image: img22, linkedin: "https://www.linkedin.com/in/rounak-jha-92a867333/", instagram: "https://www.instagram.com/jharounak13/" },
   { category: "Core Committee", name: "Sahil Minz", title: " Member", image: img23, linkedin: "https://www.linkedin.com/in/sahil-minz-939655275?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagram: "https://www.instagram.com/sahil_minz13/profilecard/?igsh=MWJkOW45cmo0aG16ZQ==" },
-  { category: "Core Committee", name: "Shivangi Singh", title: " Member", image: img30, linkedin: "https://www.linkedin.com/in/shivangi-jha-a32938258", instagram: "https://www.instagram.com/__enchanted_.11?igsh=MXMyNnZnOWhyZ2oycA==" },
+  { category: "Core Committee", name: "Shivangi Jha", title: " Member", image: img0, linkedin: "https://www.linkedin.com/in/shivangi-jha-a32938258", instagram: "https://www.instagram.com/__enchanted_.11?igsh=MXMyNnZnOWhyZ2oycA==" },
   { category: "Core Committee", name: "Shubham Garg", title: " Member", image: img25, linkedin: "https://www.linkedin.com/in/shubham-garg-48ab3a289", instagram: "https://www.instagram.com/shubham_garg4444/profilecard/?igsh=MXYwYmg2MnlhYjFkZw==" },
   { category: "Core Committee", name: "Vinay Kumar", title: " Member", image: img27, linkedin: "https://www.linkedin.com/in/vinay-kumar-100a94311", instagram: "https://www.instagram.com/hii_i_am_vinay/profilecard/?igsh=N3BubzN4bjYzNWsx" },
   { category: "Core Committee", name: "Waquee Mubarak", title: " Member", image: img28, linkedin: "https://www.linkedin.com/in/waquee-mubarak-a69041208", instagram: "https://www.instagram.com/waquee_mk/profilecard/?igsh=dTUwejdsdnpicGRw" },
   { category: "Core Committee", name: "Yatharth Pal", title: " Member", image: img29, linkedin: "https://www.linkedin.com/in/yatharth-pal-3b31a4226", instagram: "https://www.instagram.com/yattharrthh/profilecard/?igsh=MXZvbzZhYjUyMXBqZg==" },
+  { category: "Maintainer", name: "Ayush Anand", title: " Member", image: img30, linkedin: "#", instagram: "#" },
+  { category: "Maintainer", name: "Shubham Garg", title: " Member", image: img34, linkedin: "#", instagram: "#" },
+  { category: "Maintainer", name: "Sanchi Agarwal", title: " Member", image: img32, linkedin: "#", instagram: "#" },
+  { category: "Maintainer", name: "Aaditi", title: " Member", image: img35, linkedin: "#", instagram: "#" },
+  { category: "Maintainer", name: "Divyanshu", title: " Member", image: img38, linkedin: "#", instagram: "#" },
+  { category: "Maintainer", name: "Ganesh Pandey", title: " Member", image: img31, linkedin: "#", instagram: "#" },
+  { category: "Maintainer", name: "Padam", title: " Member", image: img33, linkedin: "#", instagram: "#" },
+  { category: "Maintainer", name: "Aadhar Pradhan", title: " Member", image: img36, linkedin: "#", instagram: "#" },
+  { category: "Maintainer", name: "Divyansh Attri", title: " Member", image: img37, linkedin: "#", instagram: "#" },
 ];
 
 const GlowingText = ({ children }) => (
@@ -56,7 +74,7 @@ const GlowingText = ({ children }) => (
 );
 
 const MeetTheTeam = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Executive Board");
+  const [selectedCategory, setSelectedCategory] = useState("Maintainer");
 
   const filteredMembers = teamMembers.filter((member) => member.category === selectedCategory);
 
@@ -75,13 +93,19 @@ const MeetTheTeam = () => {
         <div className="flex justify-center mb-8 space-x-4 pt-12">
           <button
             onClick={() => setSelectedCategory("Executive Board")}
-            className={`px-4 py-2 rounded-full ${selectedCategory === "Executive Board" ? "bg-blue-500 text-white" : "bg-gray-800 text-gray-300"}`}
+            className={`px-1 py-2 sm:px-4 rounded-full ${selectedCategory === "Executive Board" ? "bg-blue-500 text-white" : "bg-gray-800 text-gray-300"}`}
           >
             Executive Board
           </button>
           <button
+            onClick={() => setSelectedCategory("Maintainer")}
+            className={`px-1 py-2 sm:px-4 rounded-full ${selectedCategory === "Maintainer" ? "bg-blue-500 text-white" : "bg-gray-800 text-gray-300"}`}
+          >
+            Maintainers
+          </button>
+          <button
             onClick={() => setSelectedCategory("Core Committee")}
-            className={`px-4 py-2 rounded-full ${selectedCategory === "Core Committee" ? "bg-blue-500 text-white" : "bg-gray-800 text-gray-300"}`}
+            className={`px-1 py-2 sm:px-4 rounded-full ${selectedCategory === "Core Committee" ? "bg-blue-500 text-white" : "bg-gray-800 text-gray-300"}`}
           >
             Core Committee
           </button>
@@ -99,7 +123,7 @@ const MeetTheTeam = () => {
             <img
               src={member.image}
               alt={member.name}
-              className="w-full h-64 object-cover rounded-t-lg"
+              className="w-full h-[30rem] object-cover rounded-t-lg"
             />
             {/* Always Visible Content */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-80"></div>

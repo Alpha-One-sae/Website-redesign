@@ -3,6 +3,9 @@ import { Cpu, Zap, Box, ChevronRight } from "lucide-react";
 import linefollower from "../Asset/Line Follower.png";
 import Cad from "../Asset/cad.png";
 import aqua from "../Asset/Aqua Venture.png"
+import foss from "../Asset/foss.jpg"
+import fifa from "../Asset/fifa.jpg"
+import quiz from "../Asset/quiz.jpg"
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import { MdDateRange } from "react-icons/md";
@@ -15,13 +18,22 @@ const EventPage = () => {
 
   const events = [
     {
-      id: 1, title: "Aqua Venture", description: "Ignite the thrusters with water", img: aqua, date:"19-Feb-2025" , venue:"UIET"
+      id: 1, title: "Aqua Venture", description: "Ignite the thrusters with water", img: aqua, date:"19 Feb 2025" , venue:"UIET"
     },
     {
       id: 2, title: "PathFury", description: "Fastest Line Following competetion", img: linefollower, date:"20-feb-2025" , venue:"UIET"
     },
     {
-      id: 3, title: "CAD Design Showdown", description: "Show your CAD prowess", img: Cad, date:"21-Feb-2025" , venue:"UIET"
+      id: 3, title: "CAD Design Showdown", description: "Show your CAD prowess", img: Cad, date:"21 Feb 2025" , venue:"UIET"
+    },
+    {
+      id: 4, title: "FOSS HACK", description: "Code! Create! Innovate!", img: foss, date:"22 Feb 2025" , venue:"UIET"
+    },
+    {
+      id: 5, title: "Quiz Show", description: "Think fast! Win BIG!", img: quiz, date:"19-21 Feb 2025" , venue:"UIET"
+    },
+    {
+      id: 6, title: "FIFA Competition", description: "Time to Settle the Debate Who’s the Ultimate Football Fan & Player?", img: fifa, date:"19 Feb 2025" , venue:"UIET"
     }
   ];
 
