@@ -58,10 +58,10 @@ export default function CyberpunkNavbar() {
                 : 'bg-green-500 text-black hover:bg-green-600' // Default style
             }`}
             onClick={() => {
-              nav("/Meet-team");
+              nav("/sae-blogs");
             }}
           >
-            Meet the Team
+            Blogs
           </button>
         </div>
 
@@ -75,10 +75,10 @@ export default function CyberpunkNavbar() {
                 : 'bg-green-500 text-black hover:bg-green-600' // Default style
             }`}
             onClick={() => {
-              nav("/Meet-team");
+              nav("/sae-blogs");
             }}
           >
-            Meet the Team
+            Blogs
           </button>
           <button className="ml-2" onClick={toggleMobileMenu}>
             <Menu size={28} className="text-blue-300" />

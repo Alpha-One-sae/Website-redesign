@@ -12,6 +12,8 @@ import Sponosor from './pages/Sponosor';
 import SAEblogs from './Component/SAEblogs';
 import Event from './pages/Event';
 import EvenDetails from './Component/EvenDetails';
+import Newsletter from './pages/Newsletter';
+import BlogPost from './Component/BlogPost';
 
 function App() {
   return (
@@ -24,9 +26,10 @@ function App() {
         <Route path="/Meet-team" element={<MeetTheTeam/>} />
         <Route path="/sponsor" element={<Sponosor/>}/>
         <Route path = "/events" element={<Event/>}/>
-        {/* <Route path = "/sae-project-blog/:blogId" element={<SAEblogs/>}/> */}
         <Route path="/event-details/:eventId" element={<EvenDetails/>} />
         <Route path="/sae-project-blog/:wing/:projectId" element={<SAEblogs />} />
+        <Route path="/sae-blogs" element={<Newsletter />} />
+        <Route path="/sae-blog-article/:title/:category" element={<BlogPost />} />
         
       </Routes>
       {/* <Footer/> */}
