@@ -24,7 +24,7 @@ const newsData = [
     title: "Advances in AI Research",
     category: "AI-technology",
     date: new Date(2024, 1, 4),
-  },
+  }, 
   {
     id: 3,
     title: "Space Research Updates",

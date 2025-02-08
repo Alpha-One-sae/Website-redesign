@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ArrowLeft, Share2, Clock, Tag, User } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
-import Footer from '../pages/Footer';
+import Footer from '../pages/Footer'; 
 
 const blogContent = {
     "latest-developments-in-motor-technology": {

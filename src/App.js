@@ -16,7 +16,7 @@ import ArticleSkeleton from './Component/ArticleSkeleton';
 import BlogPost from './Component/BlogPost';
 import Newsletter from './pages/Newsletter';
 
-function App() {
+function App() { 
   return (
     <>
     <BrowserRouter>
