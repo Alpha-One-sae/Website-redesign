@@ -48,20 +48,26 @@ export default function CyberpunkNavbar() {
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all"></span>
             </Link>
           </li>
+          <li className="group relative">
+            <Link to="/Meet-team" className="flex items-center gap-2 group-hover:text-blue-500 transition">
+              <Calendar size={20} /> Team
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all"></span>
+            </Link>
+          </li>
         </ul>
         {/* Call to Action Buttons */}
         <div className="hidden md:flex gap-4">
           <button
             className={`px-6 py-2 rounded-lg transition ${
-              location.pathname === '/Meet-team'
+              location.pathname === '/sae-blogs'
                 ? 'bg-gray-400 text-black' // Highlighted style for active page
                 : 'bg-green-500 text-black hover:bg-green-600' // Default style
             }`}
             onClick={() => {
-              nav("/Meet-team");
+              nav("/sae-blogs");
             }}
           >
-            Meet the Team
+            Tech Blog
           </button>
         </div>
 
@@ -70,15 +76,15 @@ export default function CyberpunkNavbar() {
           {/* Meet the Team Button in Mobile View */}
           <button
             className={`px-4 py-2 rounded-lg transition ${
-              location.pathname === '/Meet-team'
+              location.pathname === '/sae-blogs'
                 ? 'bg-gray-400 text-black' // Highlighted style for active page
                 : 'bg-green-500 text-black hover:bg-green-600' // Default style
             }`}
             onClick={() => {
-              nav("/Meet-team");
+              nav("/sae-blogs");
             }}
           >
-            Meet the Team
+            Tech Blog
           </button>
           <button className="ml-2" onClick={toggleMobileMenu}>
             <Menu size={28} className="text-blue-300" />
@@ -109,6 +115,12 @@ export default function CyberpunkNavbar() {
           <li onClick={toggleMobileMenu} className="group relative">
             <Link to="/sponsor" className="flex items-center gap-2 group-hover:text-blue-500 transition">
               <Calendar size={20} /> Sponsor
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all"></span>
+            </Link>
+          </li>
+          <li className="group relative">
+            <Link to="/Meet-team" className="flex items-center gap-2 group-hover:text-blue-500 transition">
+              <Calendar size={20} /> Team
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-500 group-hover:w-full transition-all"></span>
             </Link>
           </li>

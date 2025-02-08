@@ -6,6 +6,7 @@ import aqua from "../Asset/Aqua Venture.png"
 import foss from "../Asset/foss.jpg"
 import fifa from "../Asset/fifa.jpg"
 import quiz from "../Asset/quiz.jpg"
+import technovate from "../Gallery/technovate.jpg"
 import { useNavigate } from "react-router-dom";
 import Footer from "./Footer";
 import { MdDateRange } from "react-icons/md";
@@ -25,6 +26,9 @@ const EventPage = () => {
     },
     {
       id: 3, title: "CAD Design Showdown", description: "Show your CAD prowess", img: Cad, date:"21 Feb 2025" , venue:"UIET"
+    },
+    {
+      id: 7, title: "Technovate", description: "24 Hour Hackathon", img: technovate, date:"19 Feb 2025" , venue:"UIET"
     },
     {
       id: 4, title: "FOSS HACK", description: "Code! Create! Innovate!", img: foss, date:"22 Feb 2025" , venue:"UIET"

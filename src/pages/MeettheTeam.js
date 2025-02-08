@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import CyberpunkNavbar from "./Navbar";
-import { Cpu, Zap, Box } from 'lucide-react';
+import { Cpu, Zap, Box } from "lucide-react";
 import Footer from "./Footer";
 import img9 from "../Gallery/image1.jpg";
 import img10 from "../Gallery/image2.jpg";
 import img11 from "../Gallery/image3.jpg";
 import img12 from "../Gallery/image4.jpg";
 import img13 from "../Gallery/image5.jpg";
-import img14 from "../Gallery/image6.jpg";
+import img14 from "../Gallery/image61.jpg";
 import img15 from "../Gallery/image7.jpeg";
 import img16 from "../Gallery/image8.jpg";
 import img17 from "../Gallery/image9.jpg";
@@ -23,7 +23,7 @@ import img26 from "../Gallery/image18.jpg";
 import img27 from "../Gallery/image19.jpg";
 import img28 from "../Gallery/image20.jpg";
 import img29 from "../Gallery/image21.jpg";
-import img0 from "../Gallery/image22.jpg"
+import img0 from "../Gallery/image22.jpg";
 import img30 from "../Gallery/ayush.jpeg";
 import img31 from "../Gallery/ganesh.jpg";
 import img32 from "../Gallery/sanchi.jpg";
@@ -35,48 +35,268 @@ import img37 from "../Gallery/atri.jpg";
 import img38 from "../Gallery/divanyanshu.jpg";
 
 const teamMembers = [
-  { category: "Executive Board", name: "Akshit Kain", title: "Chairperson", image: img9, linkedin: "https://www.linkedin.com/in/akshitkain/", instagram: "https://www.instagram.com/akshit_kain/" },
-  { category: "Executive Board", name: "Parth Bansal", title: "Vice Chairperson", image: img10, linkedin: "https://www.linkedin.com/in/parth-bansal-627724290  ", instagram: "https://www.instagram.com/parth._.04/profilecard/?igsh=MW5vYWozamtxc2pqNw==" },
-  { category: "Executive Board", name: "Vinayak Sharma", title: "Club Co-ordinator", image: img11, linkedin: "https://www.linkedin.com/in/vinayak-sharma-b8379a302/", instagram: "https://www.instagram.com/ig.vinayaksharma/?utm_source=ig_web_button_share_sheet" },
-  { category: "Executive Board", name: "Prashant Singh", title: "Secretary", image: img12, linkedin: "https://www.linkedin.com/in/prashant-singh-30314a2a9/", instagram: "https://www.instagram.com/_prashant__4646/" },
-  { category: "Executive Board", name: "Saksham Rathore", title: "Treasurer", image: img13, linkedin: "https://www.linkedin.com/in/saksham-rathore-2330ba305", instagram: "https://www.instagram.com/sakshamrathore214/#" },
-  { category: "Executive Board", name: "Gaurav Patel", title: "Software & IT Chair", image: img14, linkedin: "https://www.linkedin.com/in/gaurav-patel-50a6041b5/", instagram: "https://www.instagram.com/gaurav6.0/" },
-  { category: "Executive Board", name: "Harsh Bassal", title: "Technical Chair", image: img15, linkedin: "https://www.linkedin.com/in/harsh-bassal-3a47811b0/", instagram: "https://www.instagram.com/harsh_bassal_/" },
-  { category: "Executive Board", name: "Shubham Kumar", title: "Program Chair", image: img16, linkedin: "#", instagram: "https://www.linkedin.com/in/shubhamkumar56018/" },
-  { category: "Executive Board", name: "Yeeshu", title: "Finance Chair", image: img17, linkedin: "https://www.linkedin.com/in/yeeshu-nayak-314787251", instagram: "https://www.instagram.com/yeeshu0111/profilecard/?igsh=MXBycjRqMjdoa2UzMg==" },
-  { category: "Core Committee", name: "Ambar Chaurasiya", title: " Member", image: img18, linkedin: "https://www.linkedin.com/in/ambar-chaurasiya-5759242a9", instagram: "https://www.instagram.com/ambar_chaurasiya?igsh=MW1pZDAyNGRkZnhhcg==" },
-  { category: "Core Committee", name: "Moksh Garg", title: " Member", image: img19, linkedin: "https://www.linkedin.com/in/moksh-garg-6092b7291", instagram: "https://www.instagram.com/mokshgarrg/profilecard/?igsh=d3MzZDhoaWhudjJ3" },
-  { category: "Core Committee", name: "Nikhil Mathuriya", title: " Member", image: img20, linkedin: "#", instagram: "https://www.instagram.com/nikhilmathuriya9/profilecard/?igsh=YWQ4Mzk0MjFsaDd1" },
-  { category: "Core Committee", name: "Pratimaan Tripathi", title: "Member", image: img21, linkedin: "http://linkedin.com/in/pratimaan-tripathi-9a80b2294", instagram: "https://www.instagram.com/_pratimaannnn/profilecard" },
-  { category: "Core Committee", name: "Rounak Kumar Jha", title: " Member", image: img22, linkedin: "https://www.linkedin.com/in/rounak-jha-92a867333/", instagram: "https://www.instagram.com/jharounak13/" },
-  { category: "Core Committee", name: "Sahil Minz", title: " Member", image: img23, linkedin: "https://www.linkedin.com/in/sahil-minz-939655275?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", instagram: "https://www.instagram.com/sahil_minz13/profilecard/?igsh=MWJkOW45cmo0aG16ZQ==" },
-  { category: "Core Committee", name: "Shivangi Jha", title: " Member", image: img0, linkedin: "https://www.linkedin.com/in/shivangi-jha-a32938258", instagram: "https://www.instagram.com/__enchanted_.11?igsh=MXMyNnZnOWhyZ2oycA==" },
-  { category: "Core Committee", name: "Shubham Garg", title: " Member", image: img25, linkedin: "https://www.linkedin.com/in/shubham-garg-48ab3a289", instagram: "https://www.instagram.com/shubham_garg4444/profilecard/?igsh=MXYwYmg2MnlhYjFkZw==" },
-  { category: "Core Committee", name: "Vinay Kumar", title: " Member", image: img27, linkedin: "https://www.linkedin.com/in/vinay-kumar-100a94311", instagram: "https://www.instagram.com/hii_i_am_vinay/profilecard/?igsh=N3BubzN4bjYzNWsx" },
-  { category: "Core Committee", name: "Waquee Mubarak", title: " Member", image: img28, linkedin: "https://www.linkedin.com/in/waquee-mubarak-a69041208", instagram: "https://www.instagram.com/waquee_mk/profilecard/?igsh=dTUwejdsdnpicGRw" },
-  { category: "Core Committee", name: "Yatharth Pal", title: " Member", image: img29, linkedin: "https://www.linkedin.com/in/yatharth-pal-3b31a4226", instagram: "https://www.instagram.com/yattharrthh/profilecard/?igsh=MXZvbzZhYjUyMXBqZg==" },
-  { category: "Maintainer", name: "Ayush Anand", title: " Member", image: img30, linkedin: "#", instagram: "#" },
-  { category: "Maintainer", name: "Shubham Garg", title: " Member", image: img34, linkedin: "#", instagram: "#" },
-  { category: "Maintainer", name: "Sanchi Agarwal", title: " Member", image: img32, linkedin: "#", instagram: "#" },
-  { category: "Maintainer", name: "Aaditi", title: " Member", image: img35, linkedin: "#", instagram: "#" },
-  { category: "Maintainer", name: "Divyanshu", title: " Member", image: img38, linkedin: "#", instagram: "#" },
-  { category: "Maintainer", name: "Ganesh Pandey", title: " Member", image: img31, linkedin: "#", instagram: "#" },
-  { category: "Maintainer", name: "Padam", title: " Member", image: img33, linkedin: "#", instagram: "#" },
-  { category: "Maintainer", name: "Aadhar Pradhan", title: " Member", image: img36, linkedin: "#", instagram: "#" },
-  { category: "Maintainer", name: "Divyansh Attri", title: " Member", image: img37, linkedin: "#", instagram: "#" },
+  {
+    category: "Executive Board",
+    name: "Akshit Kain",
+    title: "Chairperson",
+    image: img9,
+    linkedin: "https://www.linkedin.com/in/akshitkain/",
+    instagram: "https://www.instagram.com/akshit_kain/",
+  },
+  {
+    category: "Executive Board",
+    name: "Parth Bansal",
+    title: "Vice Chairperson",
+    image: img10,
+    linkedin: "https://www.linkedin.com/in/parth-bansal-627724290  ",
+    instagram:
+      "https://www.instagram.com/parth._.04/profilecard/?igsh=MW5vYWozamtxc2pqNw==",
+  },
+  {
+    category: "Executive Board",
+    name: "Vinayak Sharma",
+    title: "Club Co-ordinator",
+    image: img11,
+    linkedin: "https://www.linkedin.com/in/vinayak-sharma-b8379a302/",
+    instagram:
+      "https://www.instagram.com/ig.vinayaksharma/?utm_source=ig_web_button_share_sheet",
+  },
+  {
+    category: "Executive Board",
+    name: "Prashant Singh",
+    title: "Secretary",
+    image: img12,
+    linkedin: "https://www.linkedin.com/in/prashant-singh-30314a2a9/",
+    instagram: "https://www.instagram.com/_prashant__4646/",
+  },
+  {
+    category: "Executive Board",
+    name: "Saksham Rathore",
+    title: "Treasurer",
+    image: img13,
+    linkedin: "https://www.linkedin.com/in/saksham-rathore-2330ba305",
+    instagram: "https://www.instagram.com/sakshamrathore214/#",
+  },
+  {
+    category: "Executive Board",
+    name: "Gaurav Patel",
+    title: "Software & IT Chair",
+    image: img14,
+    linkedin: "https://www.linkedin.com/in/gaurav-patel-50a6041b5/",
+    instagram: "https://www.instagram.com/gaurav6.0/",
+  },
+  {
+    category: "Executive Board",
+    name: "Harsh Bassal",
+    title: "Technical Chair",
+    image: img15,
+    linkedin: "https://www.linkedin.com/in/harsh-bassal-3a47811b0/",
+    instagram: "https://www.instagram.com/harsh_bassal_/",
+  },
+  {
+    category: "Executive Board",
+    name: "Shubham Kumar",
+    title: "Program Chair",
+    image: img16,
+    linkedin: "#",
+    instagram: "https://www.linkedin.com/in/shubhamkumar56018/",
+  },
+  {
+    category: "Executive Board",
+    name: "Yeeshu",
+    title: "Finance Chair",
+    image: img17,
+    linkedin: "https://www.linkedin.com/in/yeeshu-nayak-314787251",
+    instagram:
+      "https://www.instagram.com/yeeshu0111/profilecard/?igsh=MXBycjRqMjdoa2UzMg==",
+  },
+  {
+    category: "Core Committee",
+    name: "Ambar Chaurasiya",
+    title: " Member",
+    image: img18,
+    linkedin: "https://www.linkedin.com/in/ambar-chaurasiya-5759242a9",
+    instagram:
+      "https://www.instagram.com/ambar_chaurasiya?igsh=MW1pZDAyNGRkZnhhcg==",
+  },
+  {
+    category: "Core Committee",
+    name: "Moksh Garg",
+    title: " Member",
+    image: img19,
+    linkedin: "https://www.linkedin.com/in/moksh-garg-6092b7291",
+    instagram:
+      "https://www.instagram.com/mokshgarrg/profilecard/?igsh=d3MzZDhoaWhudjJ3",
+  },
+  {
+    category: "Core Committee",
+    name: "Nikhil Mathuriya",
+    title: " Member",
+    image: img20,
+    linkedin: "#",
+    instagram:
+      "https://www.instagram.com/nikhilmathuriya9/profilecard/?igsh=YWQ4Mzk0MjFsaDd1",
+  },
+  {
+    category: "Core Committee",
+    name: "Pratimaan Tripathi",
+    title: "Member",
+    image: img21,
+    linkedin: "http://linkedin.com/in/pratimaan-tripathi-9a80b2294",
+    instagram: "https://www.instagram.com/_pratimaannnn/profilecard",
+  },
+  {
+    category: "Core Committee",
+    name: "Rounak Kumar Jha",
+    title: " Member",
+    image: img22,
+    linkedin: "https://www.linkedin.com/in/rounak-jha-92a867333/",
+    instagram: "https://www.instagram.com/jharounak13/",
+  },
+  {
+    category: "Core Committee",
+    name: "Sahil Minz",
+    title: " Member",
+    image: img23,
+    linkedin:
+      "https://www.linkedin.com/in/sahil-minz-939655275?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    instagram:
+      "https://www.instagram.com/sahil_minz13/profilecard/?igsh=MWJkOW45cmo0aG16ZQ==",
+  },
+  {
+    category: "Core Committee",
+    name: "Shivangi Jha",
+    title: " Member",
+    image: img0,
+    linkedin: "https://www.linkedin.com/in/shivangi-jha-a32938258",
+    instagram:
+      "https://www.instagram.com/__enchanted_.11?igsh=MXMyNnZnOWhyZ2oycA==",
+  },
+  {
+    category: "Core Committee",
+    name: "Shubham Garg",
+    title: " Member",
+    image: img25,
+    linkedin: "https://www.linkedin.com/in/shubham-garg-48ab3a289",
+    instagram:
+      "https://www.instagram.com/shubham_garg4444/profilecard/?igsh=MXYwYmg2MnlhYjFkZw==",
+  },
+  {
+    category: "Core Committee",
+    name: "Vinay Kumar",
+    title: " Member",
+    image: img27,
+    linkedin: "https://www.linkedin.com/in/vinay-kumar-100a94311",
+    instagram:
+      "https://www.instagram.com/hii_i_am_vinay/profilecard/?igsh=N3BubzN4bjYzNWsx",
+  },
+  {
+    category: "Core Committee",
+    name: "Waquee Mubarak",
+    title: " Member",
+    image: img28,
+    linkedin: "https://www.linkedin.com/in/waquee-mubarak-a69041208",
+    instagram:
+      "https://www.instagram.com/waquee_mk/profilecard/?igsh=dTUwejdsdnpicGRw",
+  },
+  {
+    category: "Core Committee",
+    name: "Yatharth Pal",
+    title: " Member",
+    image: img29,
+    linkedin: "https://www.linkedin.com/in/yatharth-pal-3b31a4226",
+    instagram:
+      "https://www.instagram.com/yattharrthh/profilecard/?igsh=MXZvbzZhYjUyMXBqZg==",
+  },
+  {
+    category: "Maintainer",
+    name: "Ayush Anand",
+    title: " Member",
+    image: img30,
+    linkedin: "#",
+    instagram: "#",
+  },
+  {
+    category: "Maintainer",
+    name: "Shubham Garg",
+    title: " Member",
+    image: img34,
+    linkedin: "#",
+    instagram: "#",
+  },
+  {
+    category: "Maintainer",
+    name: "Sanchi Agarwal",
+    title: " Member",
+    image: img32,
+    linkedin: "#",
+    instagram: "#",
+  },
+  {
+    category: "Maintainer",
+    name: "Aaditi",
+    title: " Member",
+    image: img35,
+    linkedin: "#",
+    instagram: "#",
+  },
+  {
+    category: "Maintainer",
+    name: "Divyanshu",
+    title: " Member",
+    image: img38,
+    linkedin: "#",
+    instagram: "#",
+  },
+  {
+    category: "Maintainer",
+    name: "Ganesh Pandey",
+    title: " Member",
+    image: img31,
+    linkedin: "#",
+    instagram: "#",
+  },
+  {
+    category: "Maintainer",
+    name: "Padam",
+    title: " Member",
+    image: img33,
+    linkedin: "#",
+    instagram: "#",
+  },
+  {
+    category: "Maintainer",
+    name: "Aadhar Pradhan",
+    title: " Member",
+    image: img36,
+    linkedin: "#",
+    instagram: "#",
+  },
+  {
+    category: "Maintainer",
+    name: "Divyansh Attri",
+    title: " Member",
+    image: img37,
+    linkedin: "#",
+    instagram: "#",
+  },
 ];
 
 const GlowingText = ({ children }) => (
   <span className="relative">
-    <span className="absolute inset-0 -z-10 blur-[2px] text-blue-500 opacity-70">{children}</span>
+    <span className="absolute inset-0 -z-10 blur-[2px] text-blue-500 opacity-70">
+      {children}
+    </span>
     <span className="relative">{children}</span>
   </span>
 );
 
 const MeetTheTeam = () => {
-  const [selectedCategory, setSelectedCategory] = useState("Maintainer");
+  const [selectedCategory, setSelectedCategory] = useState("Executive Board");
 
-  const filteredMembers = teamMembers.filter((member) => member.category === selectedCategory);
+  const filteredMembers = teamMembers.filter(
+    (member) => member.category === selectedCategory
+  );
 
   return (
     <section className="min-h-screen flex flex-col items-center bg-black text-white overflow-hidden relative z-0">
@@ -93,21 +313,33 @@ const MeetTheTeam = () => {
         <div className="flex justify-center mb-8 space-x-4 pt-12">
           <button
             onClick={() => setSelectedCategory("Executive Board")}
-            className={`px-1 py-2 sm:px-4 rounded-full ${selectedCategory === "Executive Board" ? "bg-blue-500 text-white" : "bg-gray-800 text-gray-300"}`}
+            className={`px-1 py-2 sm:px-4 rounded-full ${
+              selectedCategory === "Executive Board"
+                ? "bg-blue-500 text-white"
+                : "bg-gray-800 text-gray-300"
+            }`}
           >
             Executive Board
           </button>
           <button
-            onClick={() => setSelectedCategory("Maintainer")}
-            className={`px-1 py-2 sm:px-4 rounded-full ${selectedCategory === "Maintainer" ? "bg-blue-500 text-white" : "bg-gray-800 text-gray-300"}`}
-          >
-            Maintainers
-          </button>
-          <button
             onClick={() => setSelectedCategory("Core Committee")}
-            className={`px-1 py-2 sm:px-4 rounded-full ${selectedCategory === "Core Committee" ? "bg-blue-500 text-white" : "bg-gray-800 text-gray-300"}`}
+            className={`px-1 py-2 sm:px-4 rounded-full ${
+              selectedCategory === "Core Committee"
+                ? "bg-blue-500 text-white"
+                : "bg-gray-800 text-gray-300"
+            }`}
           >
             Core Committee
+          </button>
+          <button
+            onClick={() => setSelectedCategory("Maintainer")}
+            className={`px-1 py-2 sm:px-4 rounded-full ${
+              selectedCategory === "Maintainer"
+                ? "bg-blue-500 text-white"
+                : "bg-gray-800 text-gray-300"
+            }`}
+          >
+            Maintainers
           </button>
         </div>
       </div>
@@ -128,19 +360,33 @@ const MeetTheTeam = () => {
             {/* Always Visible Content */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-80"></div>
             <div className="p-6 absolute inset-x-0 bottom-0 text-center">
-              <h3 className="text-2xl font-semibold opacity-50 group-hover:opacity-0 transition-opacity duration-300 text-white mb-2">{member.name}</h3>
+              <h3 className="text-2xl font-semibold opacity-50 group-hover:opacity-0 transition-opacity duration-300 text-white mb-2">
+                {member.name}
+              </h3>
               <p className="text-sm text-cyan-400 opacity-50 group-hover:opacity-0 transition-opacity duration-300">
                 {member.title}
               </p>
             </div>
             <div className="absolute inset-0 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/50">
-              <h3 className="text-2xl font-semibold text-white">{member.name}</h3>
+              <h3 className="text-2xl font-semibold text-white">
+                {member.name}
+              </h3>
               <p className="text-cyan-400 font-medium">{member.title}</p>
               <div className="flex space-x-4 mt-4">
-                <a href={member.linkedin} target="_blank" rel="noreferrer" className="hover:scale-110 transition-transform">
+                <a
+                  href={member.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:scale-110 transition-transform"
+                >
                   <i className="fab fa-linkedin text-white text-xl"></i>
                 </a>
-                <a href={member.instagram} target="_blank" rel="noreferrer" className="hover:scale-110 transition-transform">
+                <a
+                  href={member.instagram}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:scale-110 transition-transform"
+                >
                   <i className="fab fa-instagram text-white text-xl"></i>
                 </a>
               </div>
@@ -167,4 +413,3 @@ const MeetTheTeam = () => {
 };
 
 export default MeetTheTeam;
-

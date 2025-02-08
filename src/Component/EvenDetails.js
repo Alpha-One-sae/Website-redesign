@@ -90,6 +90,7 @@ const eventDetails = {
       "Organizer shall have final authority over the interpretation and application of all Rules and decisions. Decisions by organisers in regards to the interpretation and application of the Rules, the Tournament and the Program shall be final and not subject to challenge or appeal.",
       "These Design Rules may change at any time will be highlighted on the website and notified to the registered teams.. You acknowledge and agree that it is your responsibility to read, understand, and comply with any and all rules provided herein. It is strongly encouraged that you check these Design Rules often for any changes that may affect your design, build, and/or ability to compete in the Tournament. Organizers reserves the right to remove any Team from the Tournament at any time for any reason (including, without limitation, failure to meet safety and/or technical requirements) in its sole and absolute.",
     ],
+    facility: [],
   },
   3: {
     name: "CAD Design Showdown",
@@ -154,6 +155,7 @@ const eventDetails = {
       "WhatsApp group has been made for all participants.",
       "Assume all necessary and unstated dimensions. Try making the design symmetrical.",
     ],
+    facility: [],
   },
   1: {
     name: "Aqua Venture",
@@ -202,6 +204,7 @@ const eventDetails = {
       "Organizers reserves the right to remove any Team from the Tournament at any time for any reason (including, without limitation, failure to meet safety and/or technical requirements) in its sole and absolute.",
       "Organizer shall have final authority over the interpretation and application of all Rules and decisions. Decisions by organizers in regards to the interpretation and application of the Rules, the Tournament and the Program shall be final and not subject to challenge or appeal",
     ],
+    facility: [],
   },
   4: {
     name: "FOSS Hack",
@@ -227,6 +230,7 @@ const eventDetails = {
     disqualify: [],
     markingScheme: [],
     importantNote: [],
+    facility: [],
   },
   5: {
     name: "Quiz Show",
@@ -256,6 +260,7 @@ const eventDetails = {
       "The Programming Club UIET reserves the right to disqualify any team that violates the event rules.",
       "The decision of the event organizers will be final and binding.",
     ],
+    facility: [],
   },
   6: {
     name: "FIFA Competition",
@@ -287,6 +292,49 @@ const eventDetails = {
     importantNote: [
       "No external help allowed.",
       "Sportsmanship is a must—disrespectful behavior will lead to disqualification.",
+    ],
+    facility: [],
+  },
+  7: {
+    name: "Technovate 24 Hour Hackathon",
+    location: "UIET Chandigarh",
+    startDate: "19 Feb 2025",
+    endDate: "",
+    entry: "₹ 300",
+    prize: "₹ 20k",
+    team: "2 - 5 Members",
+    link: "https://forms.gle/ot2d4qqVpMp2e1Fx7",
+    objective:
+      "UIET Chandigarh presents TECHNOVATE’25, a thrilling 24-hour hackathon powered by the GDGC Club! This year’s theme, Space and Cosmos, challenges you to innovate and code solutions inspired by the vastness of the universe. Get ready to push the boundaries of your imagination!",
+    stages: [],
+    generalrules: [],
+    botspecification: [],
+    COMPETITIONFORMAT: [
+      "Problem Statements will be based on these tracks:",
+      "🔗 Blockchain",
+      "🤖 Artificial Intelligence & Machine Learning",
+      "🌐 Web Development",
+      "Problem statements will be released on the day of hackathon.",
+    ],
+    competitionRules: [
+      "Teams will have 24 hours to develop and present their solutions during the onsite hackathon. All participants must be present at UIET by 10:00 AM on Feb 19th, 2025.",
+      "Submitted ideas must be the original work of the team members. Plagiarism is strictly prohibited. Internet research is permitted",
+      "Only the team leader will submit the final solution, which must include a PPT presentation and a link to a GitHub repository containing the code.",
+    ],
+    sampleProblemStatement: [],
+    judging: [
+      "There will be a continuous evaluation of the solution by the mentors present.",
+      "Technical soundness of the presentation would be valued. Marks would be given at each of the 3 round and cumulative of these would contribute the final result.",
+      "Specific Criteria: (i) Technical Complexity (ii) Creativity (iii) Potential Impact (iv) Execution (v) Presentation",
+      "The judges’s decision will stand as the final and conclusive decision.",
+    ],
+    disqualify: [],
+    markingScheme: [],
+    importantNote: [],
+    facility: [
+      "Mattress would be provided for resting purposes",
+      "Facilities for Developing and designing thee project",
+      "Food Coupons can be purchased",
     ],
   },
 };
@@ -351,7 +399,7 @@ export default function EventDetailsPage() {
           >
             <div className="absolute inset-0 bg-blue-600 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
             <span className="relative flex items-center gap-2">
-              <a href={event.link}>Register</a> <ChevronRight size={20} />
+              Register <ChevronRight size={20} />
             </span>
           </button>
           <div className="mt-4 space-y-2">
@@ -577,6 +625,22 @@ export default function EventDetailsPage() {
             ) : (
               <></>
             )}
+            {event.facility.length != 0 ? (
+              <div className="bg-gray-800 p-6 rounded-lg shadow-lg text-white border border-blue-500 hover:shadow-blue-500/50 transition-all duration-300">
+                <h3 className="text-lg font-semibold mb-4 text-blue-400">
+                  Facilities
+                </h3>
+                <ul className="list-disc ml-8 space-y-3">
+                  {event.facility.map((note, index) => (
+                    <li key={index} className="text-sm text-gray-300">
+                      {note}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <></>
+            )}
           </div>
         </div>
       </div>
@@ -594,7 +658,7 @@ export default function EventDetailsPage() {
         >
           <div className="absolute inset-0 bg-blue-600 translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
           <span className="relative flex items-center gap-2">
-            <a href={event.link}>Register</a> <ChevronRight size={20} />
+            Register <ChevronRight size={20} />
           </span>
         </button>
         <div className="mt-4 space-y-2">
